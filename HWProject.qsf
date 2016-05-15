@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C70F896C7
-set_global_assignment -name TOP_LEVEL_ENTITY Extend2628_ShiftLeft2
+set_global_assignment -name TOP_LEVEL_ENTITY Mux5
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:13:27  MAY 15, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -81,8 +81,12 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE UExtend1632.vwf
 set_global_assignment -name VERILOG_FILE UExtend832.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE UExtend832.vwf
 set_global_assignment -name VERILOG_FILE Extend2628_ShiftLeft2.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Extend2628_ShiftLeft2.vwf
+set_global_assignment -name VERILOG_FILE Mux5.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE Extend2628_ShiftLeft2.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Extend2628_ShiftLeft2.vwf
+set_global_assignment -name LL_ROOT_REGION ON -entity Extend2628_ShiftLeft2 -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Extend2628_ShiftLeft2 -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE Mux5.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Mux5.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

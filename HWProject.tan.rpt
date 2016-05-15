@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for HWProject
-Sun May 15 17:07:49 2016
+Sun May 15 17:13:35 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -9,9 +9,12 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   1. Legal Notice
   2. Timing Analyzer Summary
   3. Timing Analyzer Settings
-  4. Parallel Compilation
-  5. tpd
-  6. Timing Analyzer Messages
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
 
 
 
@@ -34,14 +37,16 @@ applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                     ;
-+------------------------------+-------+---------------+-------------+-------+---------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From  ; To      ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+-------+---------+------------+----------+--------------+
-; Worst-case tpd               ; N/A   ; None          ; 9.648 ns    ; in[9] ; out[11] ; --         ; --       ; 0            ;
-; Total number of failed paths ;       ;               ;             ;       ;         ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+-------+---------+------------+----------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                              ;
++------------------------------+-------+---------------+-------------+--------------------+--------------------+------------+-----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From               ; To                 ; From Clock ; To Clock  ; Failed Paths ;
++------------------------------+-------+---------------+-------------+--------------------+--------------------+------------+-----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 11.487 ns   ; select[1]          ; selected[11]$latch ; --         ; select[0] ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 14.117 ns   ; selected[28]$latch ; selected[28]       ; select[2]  ; --        ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.991 ns    ; in3[0]             ; selected[0]$latch  ; --         ; select[2] ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                    ;                    ;            ;           ; 0            ;
++------------------------------+-------+---------------+-------------+--------------------+--------------------+------------+-----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,6 +83,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; select[0]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; select[1]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; select[2]       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
 Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
 +-------------------------------------+
 ; Parallel Compilation                ;
@@ -89,38 +105,526 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------+
-; tpd                                                            ;
-+-------+-------------------+-----------------+--------+---------+
-; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To      ;
-+-------+-------------------+-----------------+--------+---------+
-; N/A   ; None              ; 9.648 ns        ; in[9]  ; out[11] ;
-; N/A   ; None              ; 9.645 ns        ; in[11] ; out[13] ;
-; N/A   ; None              ; 9.639 ns        ; in[7]  ; out[9]  ;
-; N/A   ; None              ; 9.633 ns        ; in[13] ; out[15] ;
-; N/A   ; None              ; 9.619 ns        ; in[25] ; out[27] ;
-; N/A   ; None              ; 9.614 ns        ; in[23] ; out[25] ;
-; N/A   ; None              ; 9.606 ns        ; in[16] ; out[18] ;
-; N/A   ; None              ; 9.595 ns        ; in[21] ; out[23] ;
-; N/A   ; None              ; 9.578 ns        ; in[2]  ; out[4]  ;
-; N/A   ; None              ; 9.570 ns        ; in[19] ; out[21] ;
-; N/A   ; None              ; 9.565 ns        ; in[5]  ; out[7]  ;
-; N/A   ; None              ; 9.558 ns        ; in[22] ; out[24] ;
-; N/A   ; None              ; 9.546 ns        ; in[14] ; out[16] ;
-; N/A   ; None              ; 9.539 ns        ; in[12] ; out[14] ;
-; N/A   ; None              ; 9.445 ns        ; in[4]  ; out[6]  ;
-; N/A   ; None              ; 9.343 ns        ; in[24] ; out[26] ;
-; N/A   ; None              ; 9.271 ns        ; in[6]  ; out[8]  ;
-; N/A   ; None              ; 8.723 ns        ; in[10] ; out[12] ;
-; N/A   ; None              ; 8.594 ns        ; in[3]  ; out[5]  ;
-; N/A   ; None              ; 8.554 ns        ; in[17] ; out[19] ;
-; N/A   ; None              ; 8.523 ns        ; in[18] ; out[20] ;
-; N/A   ; None              ; 8.514 ns        ; in[20] ; out[22] ;
-; N/A   ; None              ; 8.494 ns        ; in[8]  ; out[10] ;
-; N/A   ; None              ; 8.473 ns        ; in[15] ; out[17] ;
-; N/A   ; None              ; 5.292 ns        ; in[1]  ; out[3]  ;
-; N/A   ; None              ; 5.207 ns        ; in[0]  ; out[2]  ;
-+-------+-------------------+-----------------+--------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+--------------------+-----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From      ; To                 ; To Clock  ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+--------------------+-----------+
+; N/A                                     ; None                                                ; 11.487 ns  ; select[1] ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 11.486 ns  ; select[0] ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 11.351 ns  ; select[1] ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 11.350 ns  ; select[0] ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 11.222 ns  ; select[0] ; selected[20]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 11.190 ns  ; select[1] ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 11.189 ns  ; select[0] ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 11.167 ns  ; in0[7]    ; selected[7]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 11.086 ns  ; select[0] ; selected[20]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 11.035 ns  ; select[2] ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 11.031 ns  ; in0[7]    ; selected[7]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 10.987 ns  ; select[1] ; selected[20]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 10.928 ns  ; in0[11]   ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 10.925 ns  ; select[0] ; selected[20]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 10.899 ns  ; select[2] ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 10.870 ns  ; in0[7]    ; selected[7]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 10.851 ns  ; select[1] ; selected[20]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 10.792 ns  ; in0[11]   ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 10.738 ns  ; select[2] ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 10.690 ns  ; select[1] ; selected[20]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 10.631 ns  ; in0[11]   ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 10.266 ns  ; in2[11]   ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 10.144 ns  ; select[1] ; selected[7]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 10.130 ns  ; in2[11]   ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 10.125 ns  ; select[0] ; selected[3]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 10.008 ns  ; select[1] ; selected[7]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.989 ns   ; select[0] ; selected[3]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.969 ns   ; in2[11]   ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 9.901 ns   ; select[0] ; selected[7]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.890 ns   ; select[1] ; selected[3]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.847 ns   ; select[1] ; selected[7]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.828 ns   ; select[0] ; selected[3]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.765 ns   ; select[0] ; selected[7]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.754 ns   ; select[1] ; selected[3]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.718 ns   ; select[2] ; selected[20]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 9.692 ns   ; select[2] ; selected[7]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.666 ns   ; in2[3]    ; selected[3]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.604 ns   ; select[0] ; selected[7]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.593 ns   ; select[1] ; selected[3]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.582 ns   ; select[2] ; selected[20]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 9.556 ns   ; select[2] ; selected[7]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.530 ns   ; in2[3]    ; selected[3]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.421 ns   ; select[2] ; selected[20]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 9.395 ns   ; select[2] ; selected[7]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.369 ns   ; in2[3]    ; selected[3]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.330 ns   ; select[2] ; selected[3]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.309 ns   ; in2[7]    ; selected[7]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.206 ns   ; in0[3]    ; selected[3]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 9.194 ns   ; select[2] ; selected[3]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.173 ns   ; in2[7]    ; selected[7]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.070 ns   ; in0[3]    ; selected[3]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 9.033 ns   ; select[2] ; selected[3]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 9.012 ns   ; in2[7]    ; selected[7]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 8.942 ns   ; in4[20]   ; selected[20]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 8.909 ns   ; in0[3]    ; selected[3]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 8.806 ns   ; in4[20]   ; selected[20]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 8.645 ns   ; in4[20]   ; selected[20]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 8.549 ns   ; in0[15]   ; selected[15]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 8.504 ns   ; select[0] ; selected[15]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 8.413 ns   ; in0[15]   ; selected[15]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 8.402 ns   ; select[1] ; selected[15]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 8.368 ns   ; select[0] ; selected[15]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 8.266 ns   ; select[1] ; selected[15]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 8.252 ns   ; in0[15]   ; selected[15]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 8.207 ns   ; select[0] ; selected[15]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 8.105 ns   ; select[1] ; selected[15]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 8.071 ns   ; select[0] ; selected[28]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 8.028 ns   ; in2[15]   ; selected[15]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.988 ns   ; select[0] ; selected[2]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.950 ns   ; select[2] ; selected[15]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.935 ns   ; select[0] ; selected[28]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.912 ns   ; select[0] ; selected[27]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.892 ns   ; in2[15]   ; selected[15]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.884 ns   ; select[1] ; selected[14]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.852 ns   ; select[0] ; selected[2]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.843 ns   ; select[0] ; selected[0]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.836 ns   ; select[1] ; selected[28]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.814 ns   ; select[2] ; selected[15]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.805 ns   ; select[0] ; selected[26]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.776 ns   ; select[0] ; selected[27]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.774 ns   ; select[0] ; selected[28]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.765 ns   ; select[1] ; selected[1]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.754 ns   ; select[0] ; selected[1]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.753 ns   ; select[1] ; selected[2]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.748 ns   ; select[1] ; selected[14]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.731 ns   ; in2[15]   ; selected[15]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.707 ns   ; select[0] ; selected[0]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.700 ns   ; select[1] ; selected[28]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.691 ns   ; select[0] ; selected[2]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.677 ns   ; select[1] ; selected[27]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.669 ns   ; select[1] ; selected[12]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.669 ns   ; select[0] ; selected[26]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.653 ns   ; select[2] ; selected[15]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.629 ns   ; select[1] ; selected[1]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.628 ns   ; select[1] ; selected[6]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.618 ns   ; select[0] ; selected[1]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.617 ns   ; select[1] ; selected[2]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.615 ns   ; select[0] ; selected[27]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.608 ns   ; select[1] ; selected[0]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.587 ns   ; select[1] ; selected[14]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.584 ns   ; select[0] ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.570 ns   ; select[1] ; selected[26]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.562 ns   ; select[0] ; selected[30]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.556 ns   ; select[0] ; selected[8]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.553 ns   ; select[0] ; selected[14]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.546 ns   ; select[0] ; selected[0]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.541 ns   ; select[1] ; selected[27]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.539 ns   ; select[1] ; selected[28]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.533 ns   ; select[1] ; selected[12]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.508 ns   ; select[0] ; selected[26]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.492 ns   ; select[1] ; selected[6]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.486 ns   ; select[1] ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.472 ns   ; select[1] ; selected[0]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.468 ns   ; select[1] ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.457 ns   ; select[0] ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.456 ns   ; select[1] ; selected[2]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.448 ns   ; select[0] ; selected[13]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.434 ns   ; select[1] ; selected[26]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.432 ns   ; select[2] ; selected[14]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.430 ns   ; in0[20]   ; selected[20]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.426 ns   ; select[0] ; selected[30]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.420 ns   ; select[0] ; selected[8]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.417 ns   ; select[0] ; selected[14]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.408 ns   ; select[1] ; selected[30]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.401 ns   ; select[1] ; selected[8]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.380 ns   ; select[1] ; selected[27]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.372 ns   ; select[1] ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.350 ns   ; select[1] ; selected[13]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.338 ns   ; select[0] ; selected[12]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.331 ns   ; select[1] ; selected[6]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.313 ns   ; select[2] ; selected[1]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.311 ns   ; select[1] ; selected[0]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.297 ns   ; select[0] ; selected[6]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.296 ns   ; select[2] ; selected[14]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.294 ns   ; select[2] ; selected[28]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.294 ns   ; in0[20]   ; selected[20]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.287 ns   ; select[0] ; selected[13]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.277 ns   ; select[0] ; selected[9]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.273 ns   ; select[1] ; selected[26]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.272 ns   ; select[1] ; selected[30]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.265 ns   ; select[1] ; selected[8]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.265 ns   ; select[0] ; selected[30]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.259 ns   ; select[0] ; selected[8]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.256 ns   ; select[0] ; selected[14]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.217 ns   ; select[2] ; selected[12]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.206 ns   ; select[2] ; selected[2]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.202 ns   ; select[0] ; selected[12]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.189 ns   ; select[1] ; selected[13]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.189 ns   ; select[0] ; selected[25]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.177 ns   ; select[2] ; selected[1]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.176 ns   ; select[2] ; selected[6]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.162 ns   ; in0[13]   ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.161 ns   ; select[0] ; selected[6]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.158 ns   ; select[2] ; selected[28]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.144 ns   ; in4[11]   ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.141 ns   ; select[0] ; selected[9]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.135 ns   ; select[2] ; selected[14]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.133 ns   ; in0[20]   ; selected[20]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.111 ns   ; select[1] ; selected[30]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.104 ns   ; select[1] ; selected[8]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.087 ns   ; select[1] ; selected[25]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.081 ns   ; select[2] ; selected[12]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.070 ns   ; select[2] ; selected[2]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.064 ns   ; in2[25]   ; selected[25]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.053 ns   ; select[0] ; selected[25]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.049 ns   ; select[1] ; selected[31]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.042 ns   ; select[1] ; selected[9]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.041 ns   ; select[0] ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 7.040 ns   ; select[2] ; selected[6]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 7.034 ns   ; select[2] ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 7.026 ns   ; in0[13]   ; selected[13]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.016 ns   ; select[2] ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 7.008 ns   ; in4[11]   ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 7.001 ns   ; select[1] ; selected[4]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 7.000 ns   ; select[0] ; selected[6]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 6.997 ns   ; select[2] ; selected[28]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 6.980 ns   ; select[1] ; selected[10]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 6.980 ns   ; select[0] ; selected[9]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 6.956 ns   ; select[2] ; selected[30]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 6.951 ns   ; select[1] ; selected[25]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 6.949 ns   ; select[2] ; selected[8]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 6.928 ns   ; in2[25]   ; selected[25]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 6.920 ns   ; select[2] ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 6.913 ns   ; select[1] ; selected[31]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 6.909 ns   ; select[2] ; selected[2]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 6.906 ns   ; select[1] ; selected[9]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 6.898 ns   ; select[2] ; selected[13]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 6.892 ns   ; select[0] ; selected[25]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 6.879 ns   ; select[2] ; selected[6]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 6.865 ns   ; select[1] ; selected[4]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 6.865 ns   ; in0[13]   ; selected[13]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 6.863 ns   ; in2[13]   ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 6.847 ns   ; in4[11]   ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 6.844 ns   ; select[1] ; selected[10]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 6.820 ns   ; select[2] ; selected[30]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 6.819 ns   ; select[0] ; selected[31]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 6.815 ns   ; select[1] ; selected[29]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 6.813 ns   ; select[2] ; selected[8]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 6.810 ns   ; in1[11]   ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; 6.805 ns   ; select[2] ; selected[27]$latch ; select[0] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;           ;                    ;           ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------+--------------------+-----------+
+
+
++------------------------------------------------------------------------------------+
+; tco                                                                                ;
++-------+--------------+------------+--------------------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From               ; To           ; From Clock ;
++-------+--------------+------------+--------------------+--------------+------------+
+; N/A   ; None         ; 14.117 ns  ; selected[28]$latch ; selected[28] ; select[2]  ;
+; N/A   ; None         ; 13.956 ns  ; selected[28]$latch ; selected[28] ; select[1]  ;
+; N/A   ; None         ; 13.843 ns  ; selected[20]$latch ; selected[20] ; select[2]  ;
+; N/A   ; None         ; 13.820 ns  ; selected[28]$latch ; selected[28] ; select[0]  ;
+; N/A   ; None         ; 13.682 ns  ; selected[20]$latch ; selected[20] ; select[1]  ;
+; N/A   ; None         ; 13.586 ns  ; selected[3]$latch  ; selected[3]  ; select[2]  ;
+; N/A   ; None         ; 13.546 ns  ; selected[20]$latch ; selected[20] ; select[0]  ;
+; N/A   ; None         ; 13.425 ns  ; selected[3]$latch  ; selected[3]  ; select[1]  ;
+; N/A   ; None         ; 13.289 ns  ; selected[3]$latch  ; selected[3]  ; select[0]  ;
+; N/A   ; None         ; 12.350 ns  ; selected[23]$latch ; selected[23] ; select[2]  ;
+; N/A   ; None         ; 12.318 ns  ; selected[27]$latch ; selected[27] ; select[2]  ;
+; N/A   ; None         ; 12.189 ns  ; selected[23]$latch ; selected[23] ; select[1]  ;
+; N/A   ; None         ; 12.157 ns  ; selected[27]$latch ; selected[27] ; select[1]  ;
+; N/A   ; None         ; 12.053 ns  ; selected[23]$latch ; selected[23] ; select[0]  ;
+; N/A   ; None         ; 12.021 ns  ; selected[27]$latch ; selected[27] ; select[0]  ;
+; N/A   ; None         ; 11.392 ns  ; selected[16]$latch ; selected[16] ; select[2]  ;
+; N/A   ; None         ; 11.231 ns  ; selected[16]$latch ; selected[16] ; select[1]  ;
+; N/A   ; None         ; 11.095 ns  ; selected[16]$latch ; selected[16] ; select[0]  ;
+; N/A   ; None         ; 10.947 ns  ; selected[21]$latch ; selected[21] ; select[2]  ;
+; N/A   ; None         ; 10.804 ns  ; selected[26]$latch ; selected[26] ; select[2]  ;
+; N/A   ; None         ; 10.786 ns  ; selected[21]$latch ; selected[21] ; select[1]  ;
+; N/A   ; None         ; 10.650 ns  ; selected[21]$latch ; selected[21] ; select[0]  ;
+; N/A   ; None         ; 10.643 ns  ; selected[26]$latch ; selected[26] ; select[1]  ;
+; N/A   ; None         ; 10.639 ns  ; selected[17]$latch ; selected[17] ; select[2]  ;
+; N/A   ; None         ; 10.507 ns  ; selected[26]$latch ; selected[26] ; select[0]  ;
+; N/A   ; None         ; 10.478 ns  ; selected[17]$latch ; selected[17] ; select[1]  ;
+; N/A   ; None         ; 10.342 ns  ; selected[17]$latch ; selected[17] ; select[0]  ;
+; N/A   ; None         ; 10.278 ns  ; selected[11]$latch ; selected[11] ; select[2]  ;
+; N/A   ; None         ; 10.271 ns  ; selected[22]$latch ; selected[22] ; select[2]  ;
+; N/A   ; None         ; 10.237 ns  ; selected[18]$latch ; selected[18] ; select[2]  ;
+; N/A   ; None         ; 10.160 ns  ; selected[19]$latch ; selected[19] ; select[2]  ;
+; N/A   ; None         ; 10.148 ns  ; selected[7]$latch  ; selected[7]  ; select[2]  ;
+; N/A   ; None         ; 10.117 ns  ; selected[11]$latch ; selected[11] ; select[1]  ;
+; N/A   ; None         ; 10.110 ns  ; selected[22]$latch ; selected[22] ; select[1]  ;
+; N/A   ; None         ; 10.076 ns  ; selected[18]$latch ; selected[18] ; select[1]  ;
+; N/A   ; None         ; 10.061 ns  ; selected[6]$latch  ; selected[6]  ; select[2]  ;
+; N/A   ; None         ; 10.055 ns  ; selected[13]$latch ; selected[13] ; select[2]  ;
+; N/A   ; None         ; 10.051 ns  ; selected[29]$latch ; selected[29] ; select[2]  ;
+; N/A   ; None         ; 10.041 ns  ; selected[12]$latch ; selected[12] ; select[2]  ;
+; N/A   ; None         ; 10.040 ns  ; selected[0]$latch  ; selected[0]  ; select[2]  ;
+; N/A   ; None         ; 10.021 ns  ; selected[24]$latch ; selected[24] ; select[2]  ;
+; N/A   ; None         ; 9.999 ns   ; selected[19]$latch ; selected[19] ; select[1]  ;
+; N/A   ; None         ; 9.987 ns   ; selected[7]$latch  ; selected[7]  ; select[1]  ;
+; N/A   ; None         ; 9.981 ns   ; selected[11]$latch ; selected[11] ; select[0]  ;
+; N/A   ; None         ; 9.974 ns   ; selected[22]$latch ; selected[22] ; select[0]  ;
+; N/A   ; None         ; 9.940 ns   ; selected[18]$latch ; selected[18] ; select[0]  ;
+; N/A   ; None         ; 9.930 ns   ; selected[5]$latch  ; selected[5]  ; select[2]  ;
+; N/A   ; None         ; 9.907 ns   ; selected[1]$latch  ; selected[1]  ; select[2]  ;
+; N/A   ; None         ; 9.900 ns   ; selected[6]$latch  ; selected[6]  ; select[1]  ;
+; N/A   ; None         ; 9.894 ns   ; selected[13]$latch ; selected[13] ; select[1]  ;
+; N/A   ; None         ; 9.892 ns   ; selected[25]$latch ; selected[25] ; select[2]  ;
+; N/A   ; None         ; 9.890 ns   ; selected[29]$latch ; selected[29] ; select[1]  ;
+; N/A   ; None         ; 9.880 ns   ; selected[12]$latch ; selected[12] ; select[1]  ;
+; N/A   ; None         ; 9.879 ns   ; selected[0]$latch  ; selected[0]  ; select[1]  ;
+; N/A   ; None         ; 9.863 ns   ; selected[19]$latch ; selected[19] ; select[0]  ;
+; N/A   ; None         ; 9.860 ns   ; selected[24]$latch ; selected[24] ; select[1]  ;
+; N/A   ; None         ; 9.851 ns   ; selected[7]$latch  ; selected[7]  ; select[0]  ;
+; N/A   ; None         ; 9.779 ns   ; selected[4]$latch  ; selected[4]  ; select[2]  ;
+; N/A   ; None         ; 9.769 ns   ; selected[5]$latch  ; selected[5]  ; select[1]  ;
+; N/A   ; None         ; 9.766 ns   ; selected[2]$latch  ; selected[2]  ; select[2]  ;
+; N/A   ; None         ; 9.764 ns   ; selected[6]$latch  ; selected[6]  ; select[0]  ;
+; N/A   ; None         ; 9.758 ns   ; selected[13]$latch ; selected[13] ; select[0]  ;
+; N/A   ; None         ; 9.754 ns   ; selected[29]$latch ; selected[29] ; select[0]  ;
+; N/A   ; None         ; 9.746 ns   ; selected[1]$latch  ; selected[1]  ; select[1]  ;
+; N/A   ; None         ; 9.744 ns   ; selected[12]$latch ; selected[12] ; select[0]  ;
+; N/A   ; None         ; 9.743 ns   ; selected[0]$latch  ; selected[0]  ; select[0]  ;
+; N/A   ; None         ; 9.731 ns   ; selected[25]$latch ; selected[25] ; select[1]  ;
+; N/A   ; None         ; 9.730 ns   ; selected[31]$latch ; selected[31] ; select[2]  ;
+; N/A   ; None         ; 9.724 ns   ; selected[24]$latch ; selected[24] ; select[0]  ;
+; N/A   ; None         ; 9.711 ns   ; selected[30]$latch ; selected[30] ; select[2]  ;
+; N/A   ; None         ; 9.704 ns   ; selected[15]$latch ; selected[15] ; select[2]  ;
+; N/A   ; None         ; 9.687 ns   ; selected[8]$latch  ; selected[8]  ; select[2]  ;
+; N/A   ; None         ; 9.655 ns   ; selected[14]$latch ; selected[14] ; select[2]  ;
+; N/A   ; None         ; 9.633 ns   ; selected[5]$latch  ; selected[5]  ; select[0]  ;
+; N/A   ; None         ; 9.618 ns   ; selected[4]$latch  ; selected[4]  ; select[1]  ;
+; N/A   ; None         ; 9.610 ns   ; selected[1]$latch  ; selected[1]  ; select[0]  ;
+; N/A   ; None         ; 9.605 ns   ; selected[2]$latch  ; selected[2]  ; select[1]  ;
+; N/A   ; None         ; 9.595 ns   ; selected[25]$latch ; selected[25] ; select[0]  ;
+; N/A   ; None         ; 9.569 ns   ; selected[31]$latch ; selected[31] ; select[1]  ;
+; N/A   ; None         ; 9.550 ns   ; selected[30]$latch ; selected[30] ; select[1]  ;
+; N/A   ; None         ; 9.543 ns   ; selected[15]$latch ; selected[15] ; select[1]  ;
+; N/A   ; None         ; 9.526 ns   ; selected[8]$latch  ; selected[8]  ; select[1]  ;
+; N/A   ; None         ; 9.494 ns   ; selected[14]$latch ; selected[14] ; select[1]  ;
+; N/A   ; None         ; 9.482 ns   ; selected[4]$latch  ; selected[4]  ; select[0]  ;
+; N/A   ; None         ; 9.469 ns   ; selected[2]$latch  ; selected[2]  ; select[0]  ;
+; N/A   ; None         ; 9.433 ns   ; selected[31]$latch ; selected[31] ; select[0]  ;
+; N/A   ; None         ; 9.414 ns   ; selected[30]$latch ; selected[30] ; select[0]  ;
+; N/A   ; None         ; 9.407 ns   ; selected[15]$latch ; selected[15] ; select[0]  ;
+; N/A   ; None         ; 9.390 ns   ; selected[8]$latch  ; selected[8]  ; select[0]  ;
+; N/A   ; None         ; 9.358 ns   ; selected[14]$latch ; selected[14] ; select[0]  ;
+; N/A   ; None         ; 9.335 ns   ; selected[10]$latch ; selected[10] ; select[2]  ;
+; N/A   ; None         ; 9.335 ns   ; selected[9]$latch  ; selected[9]  ; select[2]  ;
+; N/A   ; None         ; 9.174 ns   ; selected[10]$latch ; selected[10] ; select[1]  ;
+; N/A   ; None         ; 9.174 ns   ; selected[9]$latch  ; selected[9]  ; select[1]  ;
+; N/A   ; None         ; 9.038 ns   ; selected[10]$latch ; selected[10] ; select[0]  ;
+; N/A   ; None         ; 9.038 ns   ; selected[9]$latch  ; selected[9]  ; select[0]  ;
++-------+--------------+------------+--------------------+--------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+--------------------+-----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From      ; To                 ; To Clock  ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+--------------------+-----------+
+; N/A                                     ; None                                                ; 1.991 ns  ; in3[0]    ; selected[0]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 1.830 ns  ; in3[0]    ; selected[0]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 1.694 ns  ; in3[0]    ; selected[0]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 1.389 ns  ; in2[0]    ; selected[0]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; 1.228 ns  ; in2[0]    ; selected[0]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; 1.092 ns  ; in2[0]    ; selected[0]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; 0.463 ns  ; in1[21]   ; selected[21]$latch ; select[2] ;
+; N/A                                     ; None                                                ; 0.302 ns  ; in1[21]   ; selected[21]$latch ; select[1] ;
+; N/A                                     ; None                                                ; 0.166 ns  ; in1[21]   ; selected[21]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.052 ns ; in0[21]   ; selected[21]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.095 ns ; in3[21]   ; selected[21]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.213 ns ; in0[21]   ; selected[21]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.239 ns ; in3[9]    ; selected[9]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.256 ns ; in3[21]   ; selected[21]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.305 ns ; in3[6]    ; selected[6]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.312 ns ; in2[10]   ; selected[10]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.349 ns ; in0[21]   ; selected[21]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.392 ns ; in3[21]   ; selected[21]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.400 ns ; in3[9]    ; selected[9]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -1.433 ns ; in1[12]   ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.449 ns ; in3[24]   ; selected[24]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.465 ns ; in3[1]    ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.466 ns ; in3[6]    ; selected[6]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -1.473 ns ; in2[10]   ; selected[10]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.476 ns ; in3[23]   ; selected[23]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.495 ns ; in3[10]   ; selected[10]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.504 ns ; in3[26]   ; selected[26]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.517 ns ; in3[12]   ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.527 ns ; in3[14]   ; selected[14]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.535 ns ; in3[19]   ; selected[19]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.536 ns ; in3[9]    ; selected[9]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -1.549 ns ; in3[30]   ; selected[30]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.594 ns ; in1[12]   ; selected[12]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.602 ns ; in3[6]    ; selected[6]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -1.609 ns ; in2[10]   ; selected[10]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.610 ns ; in3[24]   ; selected[24]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.617 ns ; in3[8]    ; selected[8]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.626 ns ; in3[1]    ; selected[1]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -1.637 ns ; in3[23]   ; selected[23]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.656 ns ; in3[10]   ; selected[10]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.665 ns ; in3[26]   ; selected[26]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.678 ns ; in3[12]   ; selected[12]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.680 ns ; in3[11]   ; selected[11]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.681 ns ; in2[14]   ; selected[14]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.688 ns ; in3[14]   ; selected[14]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.694 ns ; in3[15]   ; selected[15]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.696 ns ; in3[19]   ; selected[19]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.702 ns ; in3[28]   ; selected[28]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.710 ns ; in3[30]   ; selected[30]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.713 ns ; in3[2]    ; selected[2]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.724 ns ; in1[1]    ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.730 ns ; in1[12]   ; selected[12]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.746 ns ; in3[24]   ; selected[24]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.762 ns ; in3[1]    ; selected[1]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -1.771 ns ; in2[30]   ; selected[30]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.773 ns ; in3[23]   ; selected[23]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.778 ns ; in3[8]    ; selected[8]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -1.792 ns ; in3[10]   ; selected[10]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.801 ns ; in3[26]   ; selected[26]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.814 ns ; in3[12]   ; selected[12]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.824 ns ; in3[14]   ; selected[14]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.832 ns ; in3[19]   ; selected[19]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.841 ns ; in3[11]   ; selected[11]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.842 ns ; in2[14]   ; selected[14]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.846 ns ; in3[30]   ; selected[30]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.855 ns ; in3[15]   ; selected[15]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.859 ns ; in2[4]    ; selected[4]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.863 ns ; in3[28]   ; selected[28]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.874 ns ; in3[2]    ; selected[2]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -1.876 ns ; in3[31]   ; selected[31]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.885 ns ; in1[1]    ; selected[1]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -1.896 ns ; in1[27]   ; selected[27]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.903 ns ; in4[9]    ; selected[9]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -1.910 ns ; in3[13]   ; selected[13]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.914 ns ; in3[8]    ; selected[8]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -1.921 ns ; in2[12]   ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.932 ns ; in2[30]   ; selected[30]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -1.938 ns ; in1[31]   ; selected[31]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.945 ns ; select[1] ; selected[24]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.945 ns ; in4[31]   ; selected[31]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.977 ns ; in3[11]   ; selected[11]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.978 ns ; in2[14]   ; selected[14]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.991 ns ; in3[15]   ; selected[15]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -1.996 ns ; in1[13]   ; selected[13]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -1.999 ns ; in3[28]   ; selected[28]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.010 ns ; in3[2]    ; selected[2]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.018 ns ; select[0] ; selected[9]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.020 ns ; in2[4]    ; selected[4]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.021 ns ; in1[1]    ; selected[1]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.036 ns ; in1[5]    ; selected[5]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.037 ns ; in3[31]   ; selected[31]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.057 ns ; in1[27]   ; selected[27]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.064 ns ; in4[9]    ; selected[9]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.068 ns ; in2[30]   ; selected[30]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.071 ns ; in3[13]   ; selected[13]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.075 ns ; in1[29]   ; selected[29]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.079 ns ; in1[22]   ; selected[22]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.082 ns ; in2[12]   ; selected[12]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.099 ns ; in1[31]   ; selected[31]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.101 ns ; in1[23]   ; selected[23]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.106 ns ; select[1] ; selected[24]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.106 ns ; in4[31]   ; selected[31]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.116 ns ; in1[0]    ; selected[0]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.155 ns ; in1[2]    ; selected[2]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.156 ns ; in1[9]    ; selected[9]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.156 ns ; in2[4]    ; selected[4]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.157 ns ; in1[13]   ; selected[13]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.164 ns ; select[1] ; selected[5]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.167 ns ; in1[10]   ; selected[10]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.173 ns ; in3[31]   ; selected[31]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.179 ns ; select[0] ; selected[9]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.179 ns ; in3[29]   ; selected[29]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.193 ns ; in1[27]   ; selected[27]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.197 ns ; in1[5]    ; selected[5]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.199 ns ; in1[4]    ; selected[4]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.200 ns ; in4[9]    ; selected[9]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.207 ns ; in3[13]   ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.210 ns ; select[1] ; selected[23]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.210 ns ; in2[29]   ; selected[29]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.218 ns ; in2[12]   ; selected[12]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.219 ns ; in1[14]   ; selected[14]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.235 ns ; in1[31]   ; selected[31]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.236 ns ; in1[29]   ; selected[29]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.240 ns ; in1[22]   ; selected[22]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.242 ns ; select[1] ; selected[24]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.242 ns ; in4[31]   ; selected[31]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.253 ns ; select[1] ; selected[25]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.262 ns ; in1[23]   ; selected[23]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.277 ns ; in1[0]    ; selected[0]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.278 ns ; in4[23]   ; selected[23]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.289 ns ; in3[27]   ; selected[27]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.293 ns ; in1[13]   ; selected[13]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.294 ns ; in3[25]   ; selected[25]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.296 ns ; in3[22]   ; selected[22]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.305 ns ; select[1] ; selected[29]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.311 ns ; select[0] ; selected[23]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.315 ns ; select[0] ; selected[9]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.316 ns ; in1[2]    ; selected[2]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.317 ns ; in1[9]    ; selected[9]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.325 ns ; select[1] ; selected[5]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.326 ns ; select[1] ; selected[22]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.328 ns ; in1[10]   ; selected[10]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.333 ns ; in1[5]    ; selected[5]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.340 ns ; in3[29]   ; selected[29]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.343 ns ; in3[7]    ; selected[7]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.346 ns ; select[1] ; selected[6]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.350 ns ; select[0] ; selected[25]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.351 ns ; select[1] ; selected[4]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.353 ns ; in3[17]   ; selected[17]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.360 ns ; in3[18]   ; selected[18]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.360 ns ; in1[4]    ; selected[4]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.367 ns ; select[1] ; selected[21]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.367 ns ; select[0] ; selected[20]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.371 ns ; select[1] ; selected[23]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.371 ns ; in2[29]   ; selected[29]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.372 ns ; in1[29]   ; selected[29]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.376 ns ; in1[22]   ; selected[22]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.380 ns ; in1[14]   ; selected[14]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.388 ns ; in2[16]   ; selected[16]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.398 ns ; in1[23]   ; selected[23]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.399 ns ; in4[27]   ; selected[27]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.413 ns ; in1[0]    ; selected[0]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.414 ns ; select[1] ; selected[25]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.420 ns ; select[0] ; selected[10]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.423 ns ; in2[22]   ; selected[22]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.424 ns ; select[0] ; selected[22]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.429 ns ; select[0] ; selected[29]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.439 ns ; in4[23]   ; selected[23]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.442 ns ; in4[21]   ; selected[21]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.443 ns ; in4[1]    ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.450 ns ; in3[27]   ; selected[27]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.452 ns ; in1[2]    ; selected[2]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.453 ns ; in4[12]   ; selected[12]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.453 ns ; in1[9]    ; selected[9]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.453 ns ; in2[8]    ; selected[8]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.455 ns ; select[0] ; selected[8]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.455 ns ; in3[25]   ; selected[25]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.456 ns ; select[0] ; selected[30]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.457 ns ; in3[22]   ; selected[22]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.461 ns ; select[1] ; selected[5]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.462 ns ; in1[19]   ; selected[19]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.464 ns ; in1[10]   ; selected[10]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.466 ns ; select[1] ; selected[29]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.468 ns ; select[0] ; selected[21]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.468 ns ; in1[28]   ; selected[28]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.471 ns ; select[0] ; selected[6]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.472 ns ; select[0] ; selected[23]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.474 ns ; select[0] ; selected[4]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.476 ns ; in3[29]   ; selected[29]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.480 ns ; select[1] ; selected[2]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.486 ns ; select[1] ; selected[16]$latch ; select[2] ;
+; N/A                                     ; None                                                ; -2.487 ns ; select[1] ; selected[22]$latch ; select[1] ;
+; N/A                                     ; None                                                ; -2.493 ns ; select[1] ; selected[1]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.496 ns ; in1[4]    ; selected[4]$latch  ; select[0] ;
+; N/A                                     ; None                                                ; -2.504 ns ; in3[7]    ; selected[7]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.504 ns ; in4[4]    ; selected[4]$latch  ; select[2] ;
+; N/A                                     ; None                                                ; -2.507 ns ; select[1] ; selected[6]$latch  ; select[1] ;
+; N/A                                     ; None                                                ; -2.507 ns ; select[1] ; selected[23]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.507 ns ; in2[29]   ; selected[29]$latch ; select[0] ;
+; N/A                                     ; None                                                ; -2.510 ns ; in2[6]    ; selected[6]$latch  ; select[2] ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;           ;                    ;           ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+--------------------+-----------+
 
 
 +--------------------------+
@@ -129,17 +633,98 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun May 15 17:07:48 2016
+    Info: Processing started: Sun May 15 17:13:35 2016
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off HWProject -c HWProject --timing_analysis_only
-Info: Longest tpd from source pin "in[9]" to destination pin "out[11]" is 9.648 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.833 ns) = 0.833 ns; Loc. = PIN_AD22; Fanout = 1; PIN Node = 'in[9]'
-    Info: 2: + IC(5.779 ns) + CELL(3.036 ns) = 9.648 ns; Loc. = PIN_AJ26; Fanout = 0; PIN Node = 'out[11]'
-    Info: Total cell delay = 3.869 ns ( 40.10 % )
-    Info: Total interconnect delay = 5.779 ns ( 59.90 % )
-Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 194 megabytes
-    Info: Processing ended: Sun May 15 17:07:49 2016
-    Info: Elapsed time: 00:00:01
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "selected[0]$latch" is a latch
+    Warning: Node "selected[1]$latch" is a latch
+    Warning: Node "selected[2]$latch" is a latch
+    Warning: Node "selected[3]$latch" is a latch
+    Warning: Node "selected[4]$latch" is a latch
+    Warning: Node "selected[5]$latch" is a latch
+    Warning: Node "selected[6]$latch" is a latch
+    Warning: Node "selected[7]$latch" is a latch
+    Warning: Node "selected[8]$latch" is a latch
+    Warning: Node "selected[9]$latch" is a latch
+    Warning: Node "selected[10]$latch" is a latch
+    Warning: Node "selected[11]$latch" is a latch
+    Warning: Node "selected[12]$latch" is a latch
+    Warning: Node "selected[13]$latch" is a latch
+    Warning: Node "selected[14]$latch" is a latch
+    Warning: Node "selected[15]$latch" is a latch
+    Warning: Node "selected[16]$latch" is a latch
+    Warning: Node "selected[17]$latch" is a latch
+    Warning: Node "selected[18]$latch" is a latch
+    Warning: Node "selected[19]$latch" is a latch
+    Warning: Node "selected[20]$latch" is a latch
+    Warning: Node "selected[21]$latch" is a latch
+    Warning: Node "selected[22]$latch" is a latch
+    Warning: Node "selected[23]$latch" is a latch
+    Warning: Node "selected[24]$latch" is a latch
+    Warning: Node "selected[25]$latch" is a latch
+    Warning: Node "selected[26]$latch" is a latch
+    Warning: Node "selected[27]$latch" is a latch
+    Warning: Node "selected[28]$latch" is a latch
+    Warning: Node "selected[29]$latch" is a latch
+    Warning: Node "selected[30]$latch" is a latch
+    Warning: Node "selected[31]$latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "select[0]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "select[1]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "select[2]" is a latch enable. Will not compute fmax for this pin.
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "Mux32~0" as buffer
+Info: tsu for register "selected[11]$latch" (data pin = "select[1]", clock pin = "select[0]") is 11.487 ns
+    Info: + Longest pin to register delay is 16.349 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.873 ns) = 0.873 ns; Loc. = PIN_C9; Fanout = 35; CLK Node = 'select[1]'
+        Info: 2: + IC(5.331 ns) + CELL(0.545 ns) = 6.749 ns; Loc. = LCCOMB_X19_Y50_N26; Fanout = 48; COMB Node = 'Mux0~1'
+        Info: 3: + IC(0.387 ns) + CELL(0.521 ns) = 7.657 ns; Loc. = LCCOMB_X19_Y50_N30; Fanout = 1; COMB Node = 'Mux11~0'
+        Info: 4: + IC(3.658 ns) + CELL(0.521 ns) = 11.836 ns; Loc. = LCCOMB_X60_Y50_N12; Fanout = 1; COMB Node = 'Mux11~1'
+        Info: 5: + IC(3.288 ns) + CELL(0.178 ns) = 15.302 ns; Loc. = LCCOMB_X1_Y43_N16; Fanout = 1; COMB Node = 'Mux11~2'
+        Info: 6: + IC(0.526 ns) + CELL(0.521 ns) = 16.349 ns; Loc. = LCCOMB_X2_Y43_N8; Fanout = 1; REG Node = 'selected[11]$latch'
+        Info: Total cell delay = 3.159 ns ( 19.32 % )
+        Info: Total interconnect delay = 13.190 ns ( 80.68 % )
+    Info: + Micro setup delay of destination is 0.801 ns
+    Info: - Shortest clock path from clock "select[0]" to destination register is 5.663 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.863 ns) = 0.863 ns; Loc. = PIN_C10; Fanout = 35; CLK Node = 'select[0]'
+        Info: 2: + IC(1.156 ns) + CELL(0.178 ns) = 2.197 ns; Loc. = LCCOMB_X19_Y50_N24; Fanout = 1; COMB Node = 'Mux32~0'
+        Info: 3: + IC(1.629 ns) + CELL(0.000 ns) = 3.826 ns; Loc. = CLKCTRL_G10; Fanout = 32; COMB Node = 'Mux32~0clkctrl'
+        Info: 4: + IC(1.659 ns) + CELL(0.178 ns) = 5.663 ns; Loc. = LCCOMB_X2_Y43_N8; Fanout = 1; REG Node = 'selected[11]$latch'
+        Info: Total cell delay = 1.219 ns ( 21.53 % )
+        Info: Total interconnect delay = 4.444 ns ( 78.47 % )
+Info: tco from clock "select[2]" to destination pin "selected[28]" through register "selected[28]$latch" is 14.117 ns
+    Info: + Longest clock path from clock "select[2]" to source register is 6.060 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.873 ns) = 0.873 ns; Loc. = PIN_D9; Fanout = 2; CLK Node = 'select[2]'
+        Info: 2: + IC(1.100 ns) + CELL(0.521 ns) = 2.494 ns; Loc. = LCCOMB_X19_Y50_N24; Fanout = 1; COMB Node = 'Mux32~0'
+        Info: 3: + IC(1.629 ns) + CELL(0.000 ns) = 4.123 ns; Loc. = CLKCTRL_G10; Fanout = 32; COMB Node = 'Mux32~0clkctrl'
+        Info: 4: + IC(1.759 ns) + CELL(0.178 ns) = 6.060 ns; Loc. = LCCOMB_X57_Y50_N14; Fanout = 1; REG Node = 'selected[28]$latch'
+        Info: Total cell delay = 1.572 ns ( 25.94 % )
+        Info: Total interconnect delay = 4.488 ns ( 74.06 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 8.057 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X57_Y50_N14; Fanout = 1; REG Node = 'selected[28]$latch'
+        Info: 2: + IC(5.051 ns) + CELL(3.006 ns) = 8.057 ns; Loc. = PIN_AH17; Fanout = 0; PIN Node = 'selected[28]'
+        Info: Total cell delay = 3.006 ns ( 37.31 % )
+        Info: Total interconnect delay = 5.051 ns ( 62.69 % )
+Info: th for register "selected[0]$latch" (data pin = "in3[0]", clock pin = "select[2]") is 1.991 ns
+    Info: + Longest clock path from clock "select[2]" to destination register is 6.060 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.873 ns) = 0.873 ns; Loc. = PIN_D9; Fanout = 2; CLK Node = 'select[2]'
+        Info: 2: + IC(1.100 ns) + CELL(0.521 ns) = 2.494 ns; Loc. = LCCOMB_X19_Y50_N24; Fanout = 1; COMB Node = 'Mux32~0'
+        Info: 3: + IC(1.629 ns) + CELL(0.000 ns) = 4.123 ns; Loc. = CLKCTRL_G10; Fanout = 32; COMB Node = 'Mux32~0clkctrl'
+        Info: 4: + IC(1.759 ns) + CELL(0.178 ns) = 6.060 ns; Loc. = LCCOMB_X57_Y50_N24; Fanout = 1; REG Node = 'selected[0]$latch'
+        Info: Total cell delay = 1.572 ns ( 25.94 % )
+        Info: Total interconnect delay = 4.488 ns ( 74.06 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 4.069 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.996 ns) = 0.996 ns; Loc. = PIN_G15; Fanout = 1; PIN Node = 'in3[0]'
+        Info: 2: + IC(1.891 ns) + CELL(0.319 ns) = 3.206 ns; Loc. = LCCOMB_X57_Y50_N12; Fanout = 1; COMB Node = 'Mux0~4'
+        Info: 3: + IC(0.318 ns) + CELL(0.545 ns) = 4.069 ns; Loc. = LCCOMB_X57_Y50_N24; Fanout = 1; REG Node = 'selected[0]$latch'
+        Info: Total cell delay = 1.860 ns ( 45.71 % )
+        Info: Total interconnect delay = 2.209 ns ( 54.29 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 195 megabytes
+    Info: Processing ended: Sun May 15 17:13:35 2016
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 
