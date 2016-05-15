@@ -1,5 +1,5 @@
 Simulator report for HWProject
-Sun May 15 15:25:34 2016
+Sun May 15 17:08:47 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -45,41 +45,41 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 129 nodes    ;
-; Simulation Coverage         ;     100.00 % ;
-; Total Number of Transitions ; 12845        ;
+; Simulation Netlist Size     ; 54 nodes     ;
+; Simulation Coverage         ;      96.30 % ;
+; Total Number of Transitions ; 2540         ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                      ;
-+--------------------------------------------------------------------------------------------+------------+---------------+
-; Option                                                                                     ; Setting    ; Default Value ;
-+--------------------------------------------------------------------------------------------+------------+---------------+
-; Simulation mode                                                                            ; Functional ; Timing        ;
-; Start time                                                                                 ; 0 ns       ; 0 ns          ;
-; Simulation results format                                                                  ; CVWF       ;               ;
-; Vector input source                                                                        ; Mux2.vwf   ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
-; Check outputs                                                                              ; Off        ; Off           ;
-; Report simulation coverage                                                                 ; On         ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
-; Display missing 1-value coverage report                                                    ; On         ; On            ;
-; Display missing 0-value coverage report                                                    ; On         ; On            ;
-; Detect setup and hold time violations                                                      ; Off        ; Off           ;
-; Detect glitches                                                                            ; Off        ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
-; Generate Signal Activity File                                                              ; Off        ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
-; Group bus channels in simulation results                                                   ; Off        ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
-+--------------------------------------------------------------------------------------------+------------+---------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                     ;
++--------------------------------------------------------------------------------------------+---------------------------+---------------+
+; Option                                                                                     ; Setting                   ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------+---------------+
+; Simulation mode                                                                            ; Functional                ; Timing        ;
+; Start time                                                                                 ; 0 ns                      ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF                      ;               ;
+; Vector input source                                                                        ; Extend2628_ShiftLeft2.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                        ; On            ;
+; Check outputs                                                                              ; Off                       ; Off           ;
+; Report simulation coverage                                                                 ; On                        ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                        ; On            ;
+; Display missing 1-value coverage report                                                    ; On                        ; On            ;
+; Display missing 0-value coverage report                                                    ; On                        ; On            ;
+; Detect setup and hold time violations                                                      ; Off                       ; Off           ;
+; Detect glitches                                                                            ; Off                       ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                       ; Off           ;
+; Generate Signal Activity File                                                              ; Off                       ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                       ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                       ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                        ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                       ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                      ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------+---------------+
 
 
 +----------------------+
@@ -94,168 +94,97 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;     100.00 % ;
-; Total nodes checked                                 ; 129          ;
-; Total output ports checked                          ; 129          ;
-; Total output ports with complete 1/0-value coverage ; 129          ;
-; Total output ports with no 1/0-value coverage       ; 0            ;
-; Total output ports with no 1-value coverage         ; 0            ;
-; Total output ports with no 0-value coverage         ; 0            ;
+; Total coverage as a percentage                      ;      96.30 % ;
+; Total nodes checked                                 ; 54           ;
+; Total output ports checked                          ; 54           ;
+; Total output ports with complete 1/0-value coverage ; 52           ;
+; Total output ports with no 1/0-value coverage       ; 2            ;
+; Total output ports with no 1-value coverage         ; 2            ;
+; Total output ports with no 0-value coverage         ; 2            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                ;
-+--------------------+--------------------+------------------+
-; Node Name          ; Output Port Name   ; Output Port Type ;
-+--------------------+--------------------+------------------+
-; |Mux2|selected~0   ; |Mux2|selected~0   ; out              ;
-; |Mux2|selected~1   ; |Mux2|selected~1   ; out              ;
-; |Mux2|selected~2   ; |Mux2|selected~2   ; out              ;
-; |Mux2|selected~3   ; |Mux2|selected~3   ; out              ;
-; |Mux2|selected~4   ; |Mux2|selected~4   ; out              ;
-; |Mux2|selected~5   ; |Mux2|selected~5   ; out              ;
-; |Mux2|selected~6   ; |Mux2|selected~6   ; out              ;
-; |Mux2|selected~7   ; |Mux2|selected~7   ; out              ;
-; |Mux2|selected~8   ; |Mux2|selected~8   ; out              ;
-; |Mux2|selected~9   ; |Mux2|selected~9   ; out              ;
-; |Mux2|selected~10  ; |Mux2|selected~10  ; out              ;
-; |Mux2|selected~11  ; |Mux2|selected~11  ; out              ;
-; |Mux2|selected~12  ; |Mux2|selected~12  ; out              ;
-; |Mux2|selected~13  ; |Mux2|selected~13  ; out              ;
-; |Mux2|selected~14  ; |Mux2|selected~14  ; out              ;
-; |Mux2|selected~15  ; |Mux2|selected~15  ; out              ;
-; |Mux2|selected~16  ; |Mux2|selected~16  ; out              ;
-; |Mux2|selected~17  ; |Mux2|selected~17  ; out              ;
-; |Mux2|selected~18  ; |Mux2|selected~18  ; out              ;
-; |Mux2|selected~19  ; |Mux2|selected~19  ; out              ;
-; |Mux2|selected~20  ; |Mux2|selected~20  ; out              ;
-; |Mux2|selected~21  ; |Mux2|selected~21  ; out              ;
-; |Mux2|selected~22  ; |Mux2|selected~22  ; out              ;
-; |Mux2|selected~23  ; |Mux2|selected~23  ; out              ;
-; |Mux2|selected~24  ; |Mux2|selected~24  ; out              ;
-; |Mux2|selected~25  ; |Mux2|selected~25  ; out              ;
-; |Mux2|selected~26  ; |Mux2|selected~26  ; out              ;
-; |Mux2|selected~27  ; |Mux2|selected~27  ; out              ;
-; |Mux2|selected~28  ; |Mux2|selected~28  ; out              ;
-; |Mux2|selected~29  ; |Mux2|selected~29  ; out              ;
-; |Mux2|selected~30  ; |Mux2|selected~30  ; out              ;
-; |Mux2|selected~31  ; |Mux2|selected~31  ; out              ;
-; |Mux2|in0[0]       ; |Mux2|in0[0]       ; out              ;
-; |Mux2|in0[1]       ; |Mux2|in0[1]       ; out              ;
-; |Mux2|in0[2]       ; |Mux2|in0[2]       ; out              ;
-; |Mux2|in0[3]       ; |Mux2|in0[3]       ; out              ;
-; |Mux2|in0[4]       ; |Mux2|in0[4]       ; out              ;
-; |Mux2|in0[5]       ; |Mux2|in0[5]       ; out              ;
-; |Mux2|in0[6]       ; |Mux2|in0[6]       ; out              ;
-; |Mux2|in0[7]       ; |Mux2|in0[7]       ; out              ;
-; |Mux2|in0[8]       ; |Mux2|in0[8]       ; out              ;
-; |Mux2|in0[9]       ; |Mux2|in0[9]       ; out              ;
-; |Mux2|in0[10]      ; |Mux2|in0[10]      ; out              ;
-; |Mux2|in0[11]      ; |Mux2|in0[11]      ; out              ;
-; |Mux2|in0[12]      ; |Mux2|in0[12]      ; out              ;
-; |Mux2|in0[13]      ; |Mux2|in0[13]      ; out              ;
-; |Mux2|in0[14]      ; |Mux2|in0[14]      ; out              ;
-; |Mux2|in0[15]      ; |Mux2|in0[15]      ; out              ;
-; |Mux2|in0[16]      ; |Mux2|in0[16]      ; out              ;
-; |Mux2|in0[17]      ; |Mux2|in0[17]      ; out              ;
-; |Mux2|in0[18]      ; |Mux2|in0[18]      ; out              ;
-; |Mux2|in0[19]      ; |Mux2|in0[19]      ; out              ;
-; |Mux2|in0[20]      ; |Mux2|in0[20]      ; out              ;
-; |Mux2|in0[21]      ; |Mux2|in0[21]      ; out              ;
-; |Mux2|in0[22]      ; |Mux2|in0[22]      ; out              ;
-; |Mux2|in0[23]      ; |Mux2|in0[23]      ; out              ;
-; |Mux2|in0[24]      ; |Mux2|in0[24]      ; out              ;
-; |Mux2|in0[25]      ; |Mux2|in0[25]      ; out              ;
-; |Mux2|in0[26]      ; |Mux2|in0[26]      ; out              ;
-; |Mux2|in0[27]      ; |Mux2|in0[27]      ; out              ;
-; |Mux2|in0[28]      ; |Mux2|in0[28]      ; out              ;
-; |Mux2|in0[29]      ; |Mux2|in0[29]      ; out              ;
-; |Mux2|in0[30]      ; |Mux2|in0[30]      ; out              ;
-; |Mux2|in0[31]      ; |Mux2|in0[31]      ; out              ;
-; |Mux2|in1[0]       ; |Mux2|in1[0]       ; out              ;
-; |Mux2|in1[1]       ; |Mux2|in1[1]       ; out              ;
-; |Mux2|in1[2]       ; |Mux2|in1[2]       ; out              ;
-; |Mux2|in1[3]       ; |Mux2|in1[3]       ; out              ;
-; |Mux2|in1[4]       ; |Mux2|in1[4]       ; out              ;
-; |Mux2|in1[5]       ; |Mux2|in1[5]       ; out              ;
-; |Mux2|in1[6]       ; |Mux2|in1[6]       ; out              ;
-; |Mux2|in1[7]       ; |Mux2|in1[7]       ; out              ;
-; |Mux2|in1[8]       ; |Mux2|in1[8]       ; out              ;
-; |Mux2|in1[9]       ; |Mux2|in1[9]       ; out              ;
-; |Mux2|in1[10]      ; |Mux2|in1[10]      ; out              ;
-; |Mux2|in1[11]      ; |Mux2|in1[11]      ; out              ;
-; |Mux2|in1[12]      ; |Mux2|in1[12]      ; out              ;
-; |Mux2|in1[13]      ; |Mux2|in1[13]      ; out              ;
-; |Mux2|in1[14]      ; |Mux2|in1[14]      ; out              ;
-; |Mux2|in1[15]      ; |Mux2|in1[15]      ; out              ;
-; |Mux2|in1[16]      ; |Mux2|in1[16]      ; out              ;
-; |Mux2|in1[17]      ; |Mux2|in1[17]      ; out              ;
-; |Mux2|in1[18]      ; |Mux2|in1[18]      ; out              ;
-; |Mux2|in1[19]      ; |Mux2|in1[19]      ; out              ;
-; |Mux2|in1[20]      ; |Mux2|in1[20]      ; out              ;
-; |Mux2|in1[21]      ; |Mux2|in1[21]      ; out              ;
-; |Mux2|in1[22]      ; |Mux2|in1[22]      ; out              ;
-; |Mux2|in1[23]      ; |Mux2|in1[23]      ; out              ;
-; |Mux2|in1[24]      ; |Mux2|in1[24]      ; out              ;
-; |Mux2|in1[25]      ; |Mux2|in1[25]      ; out              ;
-; |Mux2|in1[26]      ; |Mux2|in1[26]      ; out              ;
-; |Mux2|in1[27]      ; |Mux2|in1[27]      ; out              ;
-; |Mux2|in1[28]      ; |Mux2|in1[28]      ; out              ;
-; |Mux2|in1[29]      ; |Mux2|in1[29]      ; out              ;
-; |Mux2|in1[30]      ; |Mux2|in1[30]      ; out              ;
-; |Mux2|in1[31]      ; |Mux2|in1[31]      ; out              ;
-; |Mux2|select       ; |Mux2|select       ; out              ;
-; |Mux2|selected[0]  ; |Mux2|selected[0]  ; pin_out          ;
-; |Mux2|selected[1]  ; |Mux2|selected[1]  ; pin_out          ;
-; |Mux2|selected[2]  ; |Mux2|selected[2]  ; pin_out          ;
-; |Mux2|selected[3]  ; |Mux2|selected[3]  ; pin_out          ;
-; |Mux2|selected[4]  ; |Mux2|selected[4]  ; pin_out          ;
-; |Mux2|selected[5]  ; |Mux2|selected[5]  ; pin_out          ;
-; |Mux2|selected[6]  ; |Mux2|selected[6]  ; pin_out          ;
-; |Mux2|selected[7]  ; |Mux2|selected[7]  ; pin_out          ;
-; |Mux2|selected[8]  ; |Mux2|selected[8]  ; pin_out          ;
-; |Mux2|selected[9]  ; |Mux2|selected[9]  ; pin_out          ;
-; |Mux2|selected[10] ; |Mux2|selected[10] ; pin_out          ;
-; |Mux2|selected[11] ; |Mux2|selected[11] ; pin_out          ;
-; |Mux2|selected[12] ; |Mux2|selected[12] ; pin_out          ;
-; |Mux2|selected[13] ; |Mux2|selected[13] ; pin_out          ;
-; |Mux2|selected[14] ; |Mux2|selected[14] ; pin_out          ;
-; |Mux2|selected[15] ; |Mux2|selected[15] ; pin_out          ;
-; |Mux2|selected[16] ; |Mux2|selected[16] ; pin_out          ;
-; |Mux2|selected[17] ; |Mux2|selected[17] ; pin_out          ;
-; |Mux2|selected[18] ; |Mux2|selected[18] ; pin_out          ;
-; |Mux2|selected[19] ; |Mux2|selected[19] ; pin_out          ;
-; |Mux2|selected[20] ; |Mux2|selected[20] ; pin_out          ;
-; |Mux2|selected[21] ; |Mux2|selected[21] ; pin_out          ;
-; |Mux2|selected[22] ; |Mux2|selected[22] ; pin_out          ;
-; |Mux2|selected[23] ; |Mux2|selected[23] ; pin_out          ;
-; |Mux2|selected[24] ; |Mux2|selected[24] ; pin_out          ;
-; |Mux2|selected[25] ; |Mux2|selected[25] ; pin_out          ;
-; |Mux2|selected[26] ; |Mux2|selected[26] ; pin_out          ;
-; |Mux2|selected[27] ; |Mux2|selected[27] ; pin_out          ;
-; |Mux2|selected[28] ; |Mux2|selected[28] ; pin_out          ;
-; |Mux2|selected[29] ; |Mux2|selected[29] ; pin_out          ;
-; |Mux2|selected[30] ; |Mux2|selected[30] ; pin_out          ;
-; |Mux2|selected[31] ; |Mux2|selected[31] ; pin_out          ;
-+--------------------+--------------------+------------------+
++------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                        ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |Extend2628_ShiftLeft2|in[0]   ; |Extend2628_ShiftLeft2|in[0]   ; out              ;
+; |Extend2628_ShiftLeft2|in[1]   ; |Extend2628_ShiftLeft2|in[1]   ; out              ;
+; |Extend2628_ShiftLeft2|in[2]   ; |Extend2628_ShiftLeft2|in[2]   ; out              ;
+; |Extend2628_ShiftLeft2|in[3]   ; |Extend2628_ShiftLeft2|in[3]   ; out              ;
+; |Extend2628_ShiftLeft2|in[4]   ; |Extend2628_ShiftLeft2|in[4]   ; out              ;
+; |Extend2628_ShiftLeft2|in[5]   ; |Extend2628_ShiftLeft2|in[5]   ; out              ;
+; |Extend2628_ShiftLeft2|in[6]   ; |Extend2628_ShiftLeft2|in[6]   ; out              ;
+; |Extend2628_ShiftLeft2|in[7]   ; |Extend2628_ShiftLeft2|in[7]   ; out              ;
+; |Extend2628_ShiftLeft2|in[8]   ; |Extend2628_ShiftLeft2|in[8]   ; out              ;
+; |Extend2628_ShiftLeft2|in[9]   ; |Extend2628_ShiftLeft2|in[9]   ; out              ;
+; |Extend2628_ShiftLeft2|in[10]  ; |Extend2628_ShiftLeft2|in[10]  ; out              ;
+; |Extend2628_ShiftLeft2|in[11]  ; |Extend2628_ShiftLeft2|in[11]  ; out              ;
+; |Extend2628_ShiftLeft2|in[12]  ; |Extend2628_ShiftLeft2|in[12]  ; out              ;
+; |Extend2628_ShiftLeft2|in[13]  ; |Extend2628_ShiftLeft2|in[13]  ; out              ;
+; |Extend2628_ShiftLeft2|in[14]  ; |Extend2628_ShiftLeft2|in[14]  ; out              ;
+; |Extend2628_ShiftLeft2|in[15]  ; |Extend2628_ShiftLeft2|in[15]  ; out              ;
+; |Extend2628_ShiftLeft2|in[16]  ; |Extend2628_ShiftLeft2|in[16]  ; out              ;
+; |Extend2628_ShiftLeft2|in[17]  ; |Extend2628_ShiftLeft2|in[17]  ; out              ;
+; |Extend2628_ShiftLeft2|in[18]  ; |Extend2628_ShiftLeft2|in[18]  ; out              ;
+; |Extend2628_ShiftLeft2|in[19]  ; |Extend2628_ShiftLeft2|in[19]  ; out              ;
+; |Extend2628_ShiftLeft2|in[20]  ; |Extend2628_ShiftLeft2|in[20]  ; out              ;
+; |Extend2628_ShiftLeft2|in[21]  ; |Extend2628_ShiftLeft2|in[21]  ; out              ;
+; |Extend2628_ShiftLeft2|in[22]  ; |Extend2628_ShiftLeft2|in[22]  ; out              ;
+; |Extend2628_ShiftLeft2|in[23]  ; |Extend2628_ShiftLeft2|in[23]  ; out              ;
+; |Extend2628_ShiftLeft2|in[24]  ; |Extend2628_ShiftLeft2|in[24]  ; out              ;
+; |Extend2628_ShiftLeft2|in[25]  ; |Extend2628_ShiftLeft2|in[25]  ; out              ;
+; |Extend2628_ShiftLeft2|out[2]  ; |Extend2628_ShiftLeft2|out[2]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[3]  ; |Extend2628_ShiftLeft2|out[3]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[4]  ; |Extend2628_ShiftLeft2|out[4]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[5]  ; |Extend2628_ShiftLeft2|out[5]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[6]  ; |Extend2628_ShiftLeft2|out[6]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[7]  ; |Extend2628_ShiftLeft2|out[7]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[8]  ; |Extend2628_ShiftLeft2|out[8]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[9]  ; |Extend2628_ShiftLeft2|out[9]  ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[10] ; |Extend2628_ShiftLeft2|out[10] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[11] ; |Extend2628_ShiftLeft2|out[11] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[12] ; |Extend2628_ShiftLeft2|out[12] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[13] ; |Extend2628_ShiftLeft2|out[13] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[14] ; |Extend2628_ShiftLeft2|out[14] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[15] ; |Extend2628_ShiftLeft2|out[15] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[16] ; |Extend2628_ShiftLeft2|out[16] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[17] ; |Extend2628_ShiftLeft2|out[17] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[18] ; |Extend2628_ShiftLeft2|out[18] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[19] ; |Extend2628_ShiftLeft2|out[19] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[20] ; |Extend2628_ShiftLeft2|out[20] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[21] ; |Extend2628_ShiftLeft2|out[21] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[22] ; |Extend2628_ShiftLeft2|out[22] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[23] ; |Extend2628_ShiftLeft2|out[23] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[24] ; |Extend2628_ShiftLeft2|out[24] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[25] ; |Extend2628_ShiftLeft2|out[25] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[26] ; |Extend2628_ShiftLeft2|out[26] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[27] ; |Extend2628_ShiftLeft2|out[27] ; pin_out          ;
++--------------------------------+--------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+-------------------------------------------------+
-; Missing 1-Value Coverage                        ;
-+-----------+------------------+------------------+
-; Node Name ; Output Port Name ; Output Port Type ;
-+-----------+------------------+------------------+
++----------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |Extend2628_ShiftLeft2|out[0] ; |Extend2628_ShiftLeft2|out[0] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[1] ; |Extend2628_ShiftLeft2|out[1] ; pin_out          ;
++-------------------------------+-------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+-------------------------------------------------+
-; Missing 0-Value Coverage                        ;
-+-----------+------------------+------------------+
-; Node Name ; Output Port Name ; Output Port Type ;
-+-----------+------------------+------------------+
++----------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |Extend2628_ShiftLeft2|out[0] ; |Extend2628_ShiftLeft2|out[0] ; pin_out          ;
+; |Extend2628_ShiftLeft2|out[1] ; |Extend2628_ShiftLeft2|out[1] ; pin_out          ;
++-------------------------------+-------------------------------+------------------+
 
 
 +---------------------+
@@ -271,20 +200,20 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun May 15 15:25:34 2016
+    Info: Processing started: Sun May 15 17:08:47 2016
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off HWProject -c HWProject
-Info: Using vector source file "C:/Users/dgmneto/Documents/Projetos/HW/Mux2.vwf"
+Info: Using vector source file "C:/Users/dgmneto/Documents/Projetos/HW/Extend2628_ShiftLeft2.vwf"
 Info: Overwriting simulation input file with simulation results
-    Info: A backup of Mux2.vwf called HWProject.sim_ori.vwf has been created in the db folder
+    Info: A backup of Extend2628_ShiftLeft2.vwf called HWProject.sim_ori.vwf has been created in the db folder
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is     100.00 %
-Info: Number of transitions in simulation is 12845
-Info: Vector file Mux2.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Simulation coverage is      96.30 %
+Info: Number of transitions in simulation is 2540
+Info: Vector file Extend2628_ShiftLeft2.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 159 megabytes
-    Info: Processing ended: Sun May 15 15:25:34 2016
+    Info: Peak virtual memory: 158 megabytes
+    Info: Processing ended: Sun May 15 17:08:47 2016
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

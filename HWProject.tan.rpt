@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for HWProject
-Sun May 15 15:22:11 2016
+Sun May 15 17:07:49 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -34,14 +34,14 @@ applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                           ;
-+------------------------------+-------+---------------+-------------+--------+--------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From   ; To           ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+--------+--------------+------------+----------+--------------+
-; Worst-case tpd               ; N/A   ; None          ; 15.586 ns   ; select ; selected[14] ; --         ; --       ; 0            ;
-; Total number of failed paths ;       ;               ;             ;        ;              ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+--------+--------------+------------+----------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                     ;
++------------------------------+-------+---------------+-------------+-------+---------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From  ; To      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-------+---------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 9.648 ns    ; in[9] ; out[11] ; --         ; --       ; 0            ;
+; Total number of failed paths ;       ;               ;             ;       ;         ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-------+---------+------------+----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,108 +89,38 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------+
-; tpd                                                                  ;
-+-------+-------------------+-----------------+---------+--------------+
-; Slack ; Required P2P Time ; Actual P2P Time ; From    ; To           ;
-+-------+-------------------+-----------------+---------+--------------+
-; N/A   ; None              ; 15.586 ns       ; select  ; selected[14] ;
-; N/A   ; None              ; 15.241 ns       ; select  ; selected[7]  ;
-; N/A   ; None              ; 15.232 ns       ; in0[6]  ; selected[6]  ;
-; N/A   ; None              ; 15.227 ns       ; in1[14] ; selected[14] ;
-; N/A   ; None              ; 15.199 ns       ; in1[6]  ; selected[6]  ;
-; N/A   ; None              ; 15.139 ns       ; in0[14] ; selected[14] ;
-; N/A   ; None              ; 15.111 ns       ; select  ; selected[6]  ;
-; N/A   ; None              ; 15.012 ns       ; in0[7]  ; selected[7]  ;
-; N/A   ; None              ; 14.733 ns       ; in1[7]  ; selected[7]  ;
-; N/A   ; None              ; 13.017 ns       ; in0[24] ; selected[24] ;
-; N/A   ; None              ; 12.607 ns       ; in0[19] ; selected[19] ;
-; N/A   ; None              ; 12.513 ns       ; in1[29] ; selected[29] ;
-; N/A   ; None              ; 12.471 ns       ; select  ; selected[16] ;
-; N/A   ; None              ; 12.460 ns       ; in0[30] ; selected[30] ;
-; N/A   ; None              ; 12.429 ns       ; select  ; selected[20] ;
-; N/A   ; None              ; 12.279 ns       ; in1[15] ; selected[15] ;
-; N/A   ; None              ; 12.262 ns       ; select  ; selected[29] ;
-; N/A   ; None              ; 12.129 ns       ; select  ; selected[30] ;
-; N/A   ; None              ; 12.117 ns       ; select  ; selected[27] ;
-; N/A   ; None              ; 12.103 ns       ; select  ; selected[24] ;
-; N/A   ; None              ; 12.085 ns       ; select  ; selected[19] ;
-; N/A   ; None              ; 12.078 ns       ; in0[29] ; selected[29] ;
-; N/A   ; None              ; 12.061 ns       ; select  ; selected[1]  ;
-; N/A   ; None              ; 11.971 ns       ; in1[30] ; selected[30] ;
-; N/A   ; None              ; 11.970 ns       ; select  ; selected[10] ;
-; N/A   ; None              ; 11.870 ns       ; select  ; selected[18] ;
-; N/A   ; None              ; 11.860 ns       ; select  ; selected[26] ;
-; N/A   ; None              ; 11.858 ns       ; in0[21] ; selected[21] ;
-; N/A   ; None              ; 11.767 ns       ; in0[16] ; selected[16] ;
-; N/A   ; None              ; 11.757 ns       ; select  ; selected[12] ;
-; N/A   ; None              ; 11.751 ns       ; in1[26] ; selected[26] ;
-; N/A   ; None              ; 11.737 ns       ; in1[27] ; selected[27] ;
-; N/A   ; None              ; 11.721 ns       ; select  ; selected[11] ;
-; N/A   ; None              ; 11.718 ns       ; select  ; selected[0]  ;
-; N/A   ; None              ; 11.714 ns       ; select  ; selected[22] ;
-; N/A   ; None              ; 11.692 ns       ; select  ; selected[21] ;
-; N/A   ; None              ; 11.686 ns       ; select  ; selected[4]  ;
-; N/A   ; None              ; 11.656 ns       ; in0[20] ; selected[20] ;
-; N/A   ; None              ; 11.621 ns       ; in0[1]  ; selected[1]  ;
-; N/A   ; None              ; 11.615 ns       ; select  ; selected[9]  ;
-; N/A   ; None              ; 11.612 ns       ; in0[27] ; selected[27] ;
-; N/A   ; None              ; 11.606 ns       ; select  ; selected[23] ;
-; N/A   ; None              ; 11.553 ns       ; in1[11] ; selected[11] ;
-; N/A   ; None              ; 11.549 ns       ; in1[3]  ; selected[3]  ;
-; N/A   ; None              ; 11.534 ns       ; in1[1]  ; selected[1]  ;
-; N/A   ; None              ; 11.517 ns       ; in1[10] ; selected[10] ;
-; N/A   ; None              ; 11.516 ns       ; select  ; selected[15] ;
-; N/A   ; None              ; 11.498 ns       ; select  ; selected[2]  ;
-; N/A   ; None              ; 11.497 ns       ; select  ; selected[8]  ;
-; N/A   ; None              ; 11.477 ns       ; in0[11] ; selected[11] ;
-; N/A   ; None              ; 11.469 ns       ; in0[26] ; selected[26] ;
-; N/A   ; None              ; 11.444 ns       ; select  ; selected[3]  ;
-; N/A   ; None              ; 11.436 ns       ; in1[20] ; selected[20] ;
-; N/A   ; None              ; 11.382 ns       ; in1[0]  ; selected[0]  ;
-; N/A   ; None              ; 11.381 ns       ; in1[18] ; selected[18] ;
-; N/A   ; None              ; 11.358 ns       ; in1[2]  ; selected[2]  ;
-; N/A   ; None              ; 11.349 ns       ; in0[12] ; selected[12] ;
-; N/A   ; None              ; 11.335 ns       ; in0[4]  ; selected[4]  ;
-; N/A   ; None              ; 11.309 ns       ; in1[19] ; selected[19] ;
-; N/A   ; None              ; 11.299 ns       ; in1[9]  ; selected[9]  ;
-; N/A   ; None              ; 11.279 ns       ; select  ; selected[17] ;
-; N/A   ; None              ; 11.276 ns       ; select  ; selected[25] ;
-; N/A   ; None              ; 11.262 ns       ; in1[8]  ; selected[8]  ;
-; N/A   ; None              ; 11.254 ns       ; in0[18] ; selected[18] ;
-; N/A   ; None              ; 11.247 ns       ; in1[16] ; selected[16] ;
-; N/A   ; None              ; 11.243 ns       ; in0[0]  ; selected[0]  ;
-; N/A   ; None              ; 11.226 ns       ; in0[23] ; selected[23] ;
-; N/A   ; None              ; 11.187 ns       ; select  ; selected[5]  ;
-; N/A   ; None              ; 11.181 ns       ; select  ; selected[13] ;
-; N/A   ; None              ; 11.158 ns       ; in0[22] ; selected[22] ;
-; N/A   ; None              ; 11.107 ns       ; in1[24] ; selected[24] ;
-; N/A   ; None              ; 11.091 ns       ; in0[8]  ; selected[8]  ;
-; N/A   ; None              ; 11.088 ns       ; in0[10] ; selected[10] ;
-; N/A   ; None              ; 11.086 ns       ; in1[22] ; selected[22] ;
-; N/A   ; None              ; 11.028 ns       ; in1[21] ; selected[21] ;
-; N/A   ; None              ; 11.007 ns       ; in1[4]  ; selected[4]  ;
-; N/A   ; None              ; 10.998 ns       ; in0[28] ; selected[28] ;
-; N/A   ; None              ; 10.952 ns       ; in1[23] ; selected[23] ;
-; N/A   ; None              ; 10.911 ns       ; in1[12] ; selected[12] ;
-; N/A   ; None              ; 10.885 ns       ; in0[17] ; selected[17] ;
-; N/A   ; None              ; 10.814 ns       ; in1[17] ; selected[17] ;
-; N/A   ; None              ; 10.787 ns       ; in0[9]  ; selected[9]  ;
-; N/A   ; None              ; 10.768 ns       ; in1[31] ; selected[31] ;
-; N/A   ; None              ; 10.750 ns       ; in0[5]  ; selected[5]  ;
-; N/A   ; None              ; 10.736 ns       ; in0[2]  ; selected[2]  ;
-; N/A   ; None              ; 10.724 ns       ; in0[31] ; selected[31] ;
-; N/A   ; None              ; 10.693 ns       ; select  ; selected[31] ;
-; N/A   ; None              ; 10.670 ns       ; in1[28] ; selected[28] ;
-; N/A   ; None              ; 10.648 ns       ; in0[3]  ; selected[3]  ;
-; N/A   ; None              ; 10.643 ns       ; in1[25] ; selected[25] ;
-; N/A   ; None              ; 10.633 ns       ; in1[5]  ; selected[5]  ;
-; N/A   ; None              ; 10.630 ns       ; in0[15] ; selected[15] ;
-; N/A   ; None              ; 10.606 ns       ; in0[13] ; selected[13] ;
-; N/A   ; None              ; 10.437 ns       ; in1[13] ; selected[13] ;
-; N/A   ; None              ; 10.422 ns       ; select  ; selected[28] ;
-; N/A   ; None              ; 10.094 ns       ; in0[25] ; selected[25] ;
-+-------+-------------------+-----------------+---------+--------------+
++----------------------------------------------------------------+
+; tpd                                                            ;
++-------+-------------------+-----------------+--------+---------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To      ;
++-------+-------------------+-----------------+--------+---------+
+; N/A   ; None              ; 9.648 ns        ; in[9]  ; out[11] ;
+; N/A   ; None              ; 9.645 ns        ; in[11] ; out[13] ;
+; N/A   ; None              ; 9.639 ns        ; in[7]  ; out[9]  ;
+; N/A   ; None              ; 9.633 ns        ; in[13] ; out[15] ;
+; N/A   ; None              ; 9.619 ns        ; in[25] ; out[27] ;
+; N/A   ; None              ; 9.614 ns        ; in[23] ; out[25] ;
+; N/A   ; None              ; 9.606 ns        ; in[16] ; out[18] ;
+; N/A   ; None              ; 9.595 ns        ; in[21] ; out[23] ;
+; N/A   ; None              ; 9.578 ns        ; in[2]  ; out[4]  ;
+; N/A   ; None              ; 9.570 ns        ; in[19] ; out[21] ;
+; N/A   ; None              ; 9.565 ns        ; in[5]  ; out[7]  ;
+; N/A   ; None              ; 9.558 ns        ; in[22] ; out[24] ;
+; N/A   ; None              ; 9.546 ns        ; in[14] ; out[16] ;
+; N/A   ; None              ; 9.539 ns        ; in[12] ; out[14] ;
+; N/A   ; None              ; 9.445 ns        ; in[4]  ; out[6]  ;
+; N/A   ; None              ; 9.343 ns        ; in[24] ; out[26] ;
+; N/A   ; None              ; 9.271 ns        ; in[6]  ; out[8]  ;
+; N/A   ; None              ; 8.723 ns        ; in[10] ; out[12] ;
+; N/A   ; None              ; 8.594 ns        ; in[3]  ; out[5]  ;
+; N/A   ; None              ; 8.554 ns        ; in[17] ; out[19] ;
+; N/A   ; None              ; 8.523 ns        ; in[18] ; out[20] ;
+; N/A   ; None              ; 8.514 ns        ; in[20] ; out[22] ;
+; N/A   ; None              ; 8.494 ns        ; in[8]  ; out[10] ;
+; N/A   ; None              ; 8.473 ns        ; in[15] ; out[17] ;
+; N/A   ; None              ; 5.292 ns        ; in[1]  ; out[3]  ;
+; N/A   ; None              ; 5.207 ns        ; in[0]  ; out[2]  ;
++-------+-------------------+-----------------+--------+---------+
 
 
 +--------------------------+
@@ -199,18 +129,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun May 15 15:22:11 2016
+    Info: Processing started: Sun May 15 17:07:48 2016
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off HWProject -c HWProject --timing_analysis_only
-Info: Longest tpd from source pin "select" to destination pin "selected[14]" is 15.586 ns
-    Info: 1: + IC(0.000 ns) + CELL(0.843 ns) = 0.843 ns; Loc. = PIN_AD13; Fanout = 32; PIN Node = 'select'
-    Info: 2: + IC(6.268 ns) + CELL(0.521 ns) = 7.632 ns; Loc. = LCCOMB_X52_Y1_N8; Fanout = 1; COMB Node = 'selected~14'
-    Info: 3: + IC(4.948 ns) + CELL(3.006 ns) = 15.586 ns; Loc. = PIN_C17; Fanout = 0; PIN Node = 'selected[14]'
-    Info: Total cell delay = 4.370 ns ( 28.04 % )
-    Info: Total interconnect delay = 11.216 ns ( 71.96 % )
+Info: Longest tpd from source pin "in[9]" to destination pin "out[11]" is 9.648 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.833 ns) = 0.833 ns; Loc. = PIN_AD22; Fanout = 1; PIN Node = 'in[9]'
+    Info: 2: + IC(5.779 ns) + CELL(3.036 ns) = 9.648 ns; Loc. = PIN_AJ26; Fanout = 0; PIN Node = 'out[11]'
+    Info: Total cell delay = 3.869 ns ( 40.10 % )
+    Info: Total interconnect delay = 5.779 ns ( 59.90 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 193 megabytes
-    Info: Processing ended: Sun May 15 15:22:11 2016
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 194 megabytes
+    Info: Processing ended: Sun May 15 17:07:49 2016
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
