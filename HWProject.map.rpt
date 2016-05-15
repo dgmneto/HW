@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HWProject
-Sun May 15 11:41:56 2016
+Sun May 15 15:21:54 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,11 +13,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |Store_Control
- 12. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +40,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 15 11:41:56 2016        ;
+; Analysis & Synthesis Status        ; Successful - Sun May 15 15:21:54 2016        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; HWProject                                    ;
-; Top-level Entity Name              ; Store_Control                                ;
+; Top-level Entity Name              ; Mux2                                         ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 57                                           ;
-;     Total combinational functions  ; 57                                           ;
+; Total logic elements               ; 32                                           ;
+;     Total combinational functions  ; 32                                           ;
 ;     Dedicated logic registers      ; 0                                            ;
 ; Total registers                    ; 0                                            ;
-; Total pins                         ; 98                                           ;
+; Total pins                         ; 97                                           ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -66,7 +63,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C70F896C7       ;                    ;
-; Top-level entity name                                                      ; Store_Control      ; HWProject          ;
+; Top-level entity name                                                      ; Mux2               ; HWProject          ;
 ; Family name                                                                ; Cyclone II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -150,42 +147,42 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                               ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                           ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------+
-; Store_Control.v                  ; yes             ; User Verilog HDL File  ; C:/Users/dgmneto/Documents/Projetos/HW/Store_Control.v ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
+; Mux2.v                           ; yes             ; User Verilog HDL File  ; C:/Users/dgmneto/Documents/Projetos/HW/Mux2.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+
 
 
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimated Total logic elements              ; 57      ;
-;                                             ;         ;
-; Total combinational functions               ; 57      ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 16      ;
-;     -- 3 input functions                    ; 40      ;
-;     -- <=2 input functions                  ; 1       ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 57      ;
-;     -- arithmetic mode                      ; 0       ;
-;                                             ;         ;
-; Total registers                             ; 0       ;
-;     -- Dedicated logic registers            ; 0       ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 98      ;
-; Maximum fan-out node                        ; Mux24~0 ;
-; Maximum fan-out                             ; 32      ;
-; Total fan-out                               ; 218     ;
-; Average fan-out                             ; 1.41    ;
-+---------------------------------------------+---------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 32     ;
+;                                             ;        ;
+; Total combinational functions               ; 32     ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 0      ;
+;     -- 3 input functions                    ; 32     ;
+;     -- <=2 input functions                  ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 32     ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 97     ;
+; Maximum fan-out node                        ; select ;
+; Maximum fan-out                             ; 32     ;
+; Total fan-out                               ; 128    ;
+; Average fan-out                             ; 0.99   ;
++---------------------------------------------+--------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -193,51 +190,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |Store_Control             ; 57 (57)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 98   ; 0            ; |Store_Control      ; work         ;
+; |Mux2                      ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 97   ; 0            ; |Mux2               ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; toMemory[0]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[1]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[2]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[3]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[4]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[5]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[6]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[7]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[8]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[9]$latch                                   ; Mux24               ; yes                    ;
-; toMemory[10]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[11]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[12]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[13]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[14]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[15]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[16]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[17]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[18]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[19]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[20]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[21]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[22]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[23]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[24]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[25]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[26]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[27]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[28]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[29]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[30]$latch                                  ; Mux24               ; yes                    ;
-; toMemory[31]$latch                                  ; Mux24               ; yes                    ;
-; Number of user-specified and inferred latches = 32  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -255,35 +210,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Store_Control|Mux0        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Store_Control|Mux8        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Store_Control ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; WORD           ; 00    ; Unsigned Binary                                      ;
-; HWORD          ; 01    ; Unsigned Binary                                      ;
-; BYTE           ; 10    ; Unsigned Binary                                      ;
-+----------------+-------+------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun May 15 11:41:54 2016
+    Info: Processing started: Sun May 15 15:21:52 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HWProject -c HWProject
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -306,109 +239,29 @@ Info: Found 2 design units, including 1 entities, in source file ula32.vhd
     Info: Found entity 1: Ula32
 Info: Found 1 design units, including 1 entities, in source file store_control.v
     Info: Found entity 1: Store_Control
-Info: Elaborating entity "Store_Control" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at Store_Control.v(11): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at Store_Control.v(11): inferring latch(es) for variable "toMemory", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "toMemory[0]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[1]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[2]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[3]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[4]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[5]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[6]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[7]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[8]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[9]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[10]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[11]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[12]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[13]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[14]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[15]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[16]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[17]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[18]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[19]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[20]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[21]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[22]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[23]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[24]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[25]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[26]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[27]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[28]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[29]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[30]" at Store_Control.v(11)
-Info (10041): Inferred latch for "toMemory[31]" at Store_Control.v(11)
-Warning: Latch toMemory[8]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[9]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[10]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[11]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[12]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[13]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[14]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[15]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[1]
-Warning: Latch toMemory[16]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[17]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[18]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[19]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[20]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[21]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[22]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[23]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[24]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[25]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[26]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[27]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[28]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[29]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[30]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
-Warning: Latch toMemory[31]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal STRCtrl[0]
+Info: Found 1 design units, including 1 entities, in source file mux8.v
+    Info: Found entity 1: Mux8
+Info: Found 1 design units, including 1 entities, in source file mux4.v
+    Info: Found entity 1: Mux4
+Info: Found 1 design units, including 1 entities, in source file mux3.v
+    Info: Found entity 1: Mux3
+Info: Found 1 design units, including 1 entities, in source file mux2.v
+    Info: Found entity 1: Mux2
+Info: Elaborating entity "Mux2" for the top level hierarchy
 Warning: Ignored assignments for entity "HWProject" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity HWProject -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity HWProject -section_id "Root Region" was ignored
-Warning: Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "MDR[0]"
-    Warning (15610): No output dependent on input pin "MDR[1]"
-    Warning (15610): No output dependent on input pin "MDR[2]"
-    Warning (15610): No output dependent on input pin "MDR[3]"
-    Warning (15610): No output dependent on input pin "MDR[4]"
-    Warning (15610): No output dependent on input pin "MDR[5]"
-    Warning (15610): No output dependent on input pin "MDR[6]"
-    Warning (15610): No output dependent on input pin "MDR[7]"
-Info: Implemented 155 device resources after synthesis - the final resource count might be different
-    Info: Implemented 66 input pins
+Warning: Ignored assignments for entity "Store_Control" -- entity does not exist in design
+    Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity Store_Control -section_id "Root Region" was ignored
+    Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Store_Control -section_id "Root Region" was ignored
+Info: Implemented 129 device resources after synthesis - the final resource count might be different
+    Info: Implemented 65 input pins
     Info: Implemented 32 output pins
-    Info: Implemented 57 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 62 warnings
+    Info: Implemented 32 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 253 megabytes
-    Info: Processing ended: Sun May 15 11:41:56 2016
+    Info: Processing ended: Sun May 15 15:21:54 2016
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:04
 
 
