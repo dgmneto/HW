@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HWProject
-Sun May 15 17:13:17 2016
+Tue May 17 09:24:35 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -13,10 +13,11 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |Multiplier
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +43,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 15 17:13:17 2016        ;
+; Analysis & Synthesis Status        ; Successful - Tue May 17 09:24:35 2016        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; HWProject                                    ;
-; Top-level Entity Name              ; Mux5                                         ;
+; Top-level Entity Name              ; Multiplier                                   ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 131                                          ;
-;     Total combinational functions  ; 131                                          ;
-;     Dedicated logic registers      ; 0                                            ;
-; Total registers                    ; 0                                            ;
-; Total pins                         ; 195                                          ;
+; Total logic elements               ; 428                                          ;
+;     Total combinational functions  ; 427                                          ;
+;     Dedicated logic registers      ; 230                                          ;
+; Total registers                    ; 230                                          ;
+; Total pins                         ; 131                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                            ;
@@ -65,7 +66,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C70F896C7       ;                    ;
-; Top-level entity name                                                      ; Mux5               ; HWProject          ;
+; Top-level entity name                                                      ; Multiplier         ; HWProject          ;
 ; Family name                                                                ; Cyclone II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -149,42 +150,42 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                      ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------+
-; Mux5.v                           ; yes             ; User Verilog HDL File  ; C:/Users/dgmneto/Documents/Projetos/HW/Mux5.v ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+
+; Multiplier.v                     ; yes             ; User Verilog HDL File  ; C:/Users/dgmneto/Documents/Projetos/HW/Multiplier.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 131    ;
-;                                             ;        ;
-; Total combinational functions               ; 131    ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 96     ;
-;     -- 3 input functions                    ; 34     ;
-;     -- <=2 input functions                  ; 1      ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 131    ;
-;     -- arithmetic mode                      ; 0      ;
-;                                             ;        ;
-; Total registers                             ; 0      ;
-;     -- Dedicated logic registers            ; 0      ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 195    ;
-; Maximum fan-out node                        ; Mux0~0 ;
-; Maximum fan-out                             ; 48     ;
-; Total fan-out                               ; 520    ;
-; Average fan-out                             ; 1.60   ;
-+---------------------------------------------+--------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 428   ;
+;                                             ;       ;
+; Total combinational functions               ; 427   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 67    ;
+;     -- 3 input functions                    ; 221   ;
+;     -- <=2 input functions                  ; 139   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 235   ;
+;     -- arithmetic mode                      ; 192   ;
+;                                             ;       ;
+; Total registers                             ; 230   ;
+;     -- Dedicated logic registers            ; 230   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 131   ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 230   ;
+; Total fan-out                               ; 2282  ;
+; Average fan-out                             ; 2.90  ;
++---------------------------------------------+-------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -192,51 +193,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |Mux5                      ; 131 (131)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 195  ; 0            ; |Mux5               ;              ;
+; |Multiplier                ; 427 (427)         ; 230 (230)    ; 0           ; 0            ; 0       ; 0         ; 131  ; 0            ; |Multiplier         ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; selected[0]$latch                                   ; Mux32               ; yes                    ;
-; selected[1]$latch                                   ; Mux32               ; yes                    ;
-; selected[2]$latch                                   ; Mux32               ; yes                    ;
-; selected[3]$latch                                   ; Mux32               ; yes                    ;
-; selected[4]$latch                                   ; Mux32               ; yes                    ;
-; selected[5]$latch                                   ; Mux32               ; yes                    ;
-; selected[6]$latch                                   ; Mux32               ; yes                    ;
-; selected[7]$latch                                   ; Mux32               ; yes                    ;
-; selected[8]$latch                                   ; Mux32               ; yes                    ;
-; selected[9]$latch                                   ; Mux32               ; yes                    ;
-; selected[10]$latch                                  ; Mux32               ; yes                    ;
-; selected[11]$latch                                  ; Mux32               ; yes                    ;
-; selected[12]$latch                                  ; Mux32               ; yes                    ;
-; selected[13]$latch                                  ; Mux32               ; yes                    ;
-; selected[14]$latch                                  ; Mux32               ; yes                    ;
-; selected[15]$latch                                  ; Mux32               ; yes                    ;
-; selected[16]$latch                                  ; Mux32               ; yes                    ;
-; selected[17]$latch                                  ; Mux32               ; yes                    ;
-; selected[18]$latch                                  ; Mux32               ; yes                    ;
-; selected[19]$latch                                  ; Mux32               ; yes                    ;
-; selected[20]$latch                                  ; Mux32               ; yes                    ;
-; selected[21]$latch                                  ; Mux32               ; yes                    ;
-; selected[22]$latch                                  ; Mux32               ; yes                    ;
-; selected[23]$latch                                  ; Mux32               ; yes                    ;
-; selected[24]$latch                                  ; Mux32               ; yes                    ;
-; selected[25]$latch                                  ; Mux32               ; yes                    ;
-; selected[26]$latch                                  ; Mux32               ; yes                    ;
-; selected[27]$latch                                  ; Mux32               ; yes                    ;
-; selected[28]$latch                                  ; Mux32               ; yes                    ;
-; selected[29]$latch                                  ; Mux32               ; yes                    ;
-; selected[30]$latch                                  ; Mux32               ; yes                    ;
-; selected[31]$latch                                  ; Mux32               ; yes                    ;
-; Number of user-specified and inferred latches = 32  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++---------------------------------------------------------------------+
+; Registers Removed During Synthesis                                  ;
++---------------------------------------+-----------------------------+
+; Register name                         ; Reason for Removal          ;
++---------------------------------------+-----------------------------+
+; product[0]~reg0                       ; Merged with product_temp[0] ;
+; Total Number of Removed Registers = 1 ;                             ;
++---------------------------------------+-----------------------------+
 
 
 +------------------------------------------------------+
@@ -244,23 +213,36 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 230   ;
+; Number of registers using Synchronous Clear  ; 64    ;
+; Number of registers using Synchronous Load   ; 131   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 230   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |Mux5|Mux0                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 102 bits  ; 204 LEs       ; 102 LEs              ; 102 LEs                ; Yes        ; |Multiplier|product_temp[0]       ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Multiplier|multiplicand_copy[23] ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |Multiplier|multiplier_copy[0]    ;
+; 4:1                ; 63 bits   ; 126 LEs       ; 126 LEs              ; 0 LEs                  ; Yes        ; |Multiplier|product[33]~reg0      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Multiplier ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; sign           ; 1     ; Unsigned Binary                                   ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -269,7 +251,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun May 15 17:13:13 2016
+    Info: Processing started: Tue May 17 09:24:32 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HWProject -c HWProject
 Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -304,8 +286,7 @@ Info: Found 1 design units, including 1 entities, in source file shift_left_2.v
     Info: Found entity 1: Shift_Left_2
 Info: Found 1 design units, including 1 entities, in source file uextend_shiftleft16.v
     Info: Found entity 1: UExtend_ShiftLeft16
-Info: Found 1 design units, including 1 entities, in source file extend1632.v
-    Info: Found entity 1: Extend1632
+Warning: Can't analyze file -- file Extend1632.v is missing
 Info: Found 1 design units, including 1 entities, in source file uextend1632.v
     Info: Found entity 1: UExtend1632
 Info: Found 1 design units, including 1 entities, in source file uextend832.v
@@ -314,105 +295,11 @@ Info: Found 1 design units, including 1 entities, in source file extend2628_shif
     Info: Found entity 1: Extend2628_ShiftLeft2
 Info: Found 1 design units, including 1 entities, in source file mux5.v
     Info: Found entity 1: Mux5
-Info: Elaborating entity "Mux5" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at Mux5.v(11): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at Mux5.v(11): inferring latch(es) for variable "selected", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "selected[0]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[1]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[2]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[3]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[4]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[5]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[6]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[7]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[8]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[9]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[10]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[11]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[12]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[13]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[14]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[15]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[16]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[17]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[18]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[19]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[20]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[21]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[22]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[23]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[24]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[25]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[26]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[27]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[28]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[29]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[30]" at Mux5.v(11)
-Info (10041): Inferred latch for "selected[31]" at Mux5.v(11)
-Warning: Latch selected[0]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[1]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[2]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[3]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[4]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[5]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[6]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[7]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[8]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[9]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[10]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[11]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[12]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[13]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[14]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[15]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[16]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[17]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[18]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[19]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[20]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[21]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[22]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[23]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[24]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[25]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[26]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[27]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[28]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[29]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[30]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
-Warning: Latch selected[31]$latch has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal select[0]
+Info: Found 1 design units, including 1 entities, in source file multiplier.v
+    Info: Found entity 1: Multiplier
+Info: Found 1 design units, including 1 entities, in source file divisor.v
+    Info: Found entity 1: Divisor
+Info: Elaborating entity "Multiplier" for the top level hierarchy
 Warning: Ignored assignments for entity "Extend2628_ShiftLeft2" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity Extend2628_ShiftLeft2 -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Extend2628_ShiftLeft2 -section_id "Root Region" was ignored
@@ -422,20 +309,23 @@ Warning: Ignored assignments for entity "HWProject" -- entity does not exist in 
 Warning: Ignored assignments for entity "Mux2" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity Mux2 -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux2 -section_id "Root Region" was ignored
+Warning: Ignored assignments for entity "Mux5" -- entity does not exist in design
+    Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity Mux5 -section_id "Root Region" was ignored
+    Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux5 -section_id "Root Region" was ignored
 Warning: Ignored assignments for entity "Store_Control" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity Store_Control -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Store_Control -section_id "Root Region" was ignored
 Warning: Ignored assignments for entity "UExtend_ShiftLeft16" -- entity does not exist in design
     Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity UExtend_ShiftLeft16 -section_id "Root Region" was ignored
     Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity UExtend_ShiftLeft16 -section_id "Root Region" was ignored
-Info: Implemented 326 device resources after synthesis - the final resource count might be different
-    Info: Implemented 163 input pins
-    Info: Implemented 32 output pins
-    Info: Implemented 131 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 81 warnings
-    Info: Peak virtual memory: 253 megabytes
-    Info: Processing ended: Sun May 15 17:13:17 2016
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Implemented 559 device resources after synthesis - the final resource count might be different
+    Info: Implemented 67 input pins
+    Info: Implemented 64 output pins
+    Info: Implemented 428 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 258 megabytes
+    Info: Processing ended: Tue May 17 09:24:35 2016
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:05
 
 
