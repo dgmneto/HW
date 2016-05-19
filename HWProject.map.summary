@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue May 17 09:24:35 2016
+Analysis & Synthesis Status : Successful - Wed May 18 21:13:55 2016
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : HWProject
-Top-level Entity Name : Multiplier
+Top-level Entity Name : Extend1632
 Family : Cyclone II
-Total logic elements : 428
-    Total combinational functions : 427
-    Dedicated logic registers : 230
-Total registers : 230
-Total pins : 131
+Total logic elements : 0
+    Total combinational functions : 0
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 48
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
