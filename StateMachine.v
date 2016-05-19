@@ -81,10 +81,17 @@ module StateMachine(
 	parameter srav3 = 32'd40;
 	parameter slt0 = 32'd41;
 	parameter slt1 = 32'd42;
-	parameter push0 = 32'd42;
-	parameter pop0 = 32'd42;
-	parameter mult0 = 32'd42;
-	parameter div0 = 32'd42;
+	parameter push0 = 32'd43;
+	parameter push1 = 32'd44;
+	parameter push2 = 32'd45;
+	parameter pop0 = 32'd46;
+	parameter pop1 = 32'd47;
+	parameter pop2 = 32'd48;
+	parameter pop3 = 32'd49;
+	parameter pop4 = 32'd50;
+	parameter pop5 = 32'd51;
+	parameter mult0 = 32'd52;
+	parameter div0 = 32'd53;
 
 	initial begin
 		delay = 5'd0;
@@ -150,7 +157,6 @@ module StateMachine(
 				end
 				decodification1: begin
 					IRWrite = 1'b0;
-					// separacao dos tipos de instrucoes
 				 	case (opCode)
 						// instrucoes tipo R
 						6'b0: begin
@@ -490,6 +496,71 @@ module StateMachine(
 					RegWrite = 1'b1;
 					MemToReg = 3'b110;
 					RegDst = 3'b001;
+
+					state = instread;
+				end
+				push0: begin
+					RR1 = 1'b1;
+					ABCtrl = 1'b1;
+
+					state = push1;
+				end
+				push1: begin
+					ALUSrcA = 2'b10;
+					ALUSrcB = 2'b01;
+					ALUOp = 3'b010;
+					ALUOutCtrl = 1'b1;
+
+					state = push2;
+				end
+				push2: begin
+					wrMemo = 1'b1;
+					IorD = 3'b100;
+					StrCtrl = 2'b00;
+
+					state = instread;
+				end
+				pop0: begin
+					RR1 = 1'b1;
+					ABCtrl = 1'b1;
+
+					state = pop1;
+				end
+				pop1: begin
+					ALUSrcA = 2'b10;
+					ALUOp = 3'b000;
+					ALUOutCtrl = 1'b1;
+
+					state = pop2;
+				end
+				pop2: begin
+					wrMemo = 1'b1;
+					IorD = 3'b100;
+					IRWrite = 1'b0;
+					MDRCtrl = 2'b10;
+					MDRLoad = 1'b1;
+
+					state = pop3;
+				end
+				pop3: begin
+					ALUSrcA = 2'b10;
+					ALUSrcB = 2'b01;
+					ALUOp = 3'b001;
+					ALUOutCtrl = 1'b1;
+
+					state = pop4;
+				end
+				pop4: begin
+					RegWrite = 1'b1;
+					RegDst = 3'b010;
+					MemToReg = 3'b000;
+
+					state = pop5;
+				end
+				pop5: begin
+					RegWrite = 1'b1;
+					RegDst = 3'b000;
+					MemToReg = 3'b001;
 
 					state = instread;
 				end
