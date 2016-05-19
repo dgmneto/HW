@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 224 144)
+	(rect 16 16 232 144)
 	(text "Multiplier" (rect 5 0 47 12)(font "Arial" ))
 	(text "inst" (rect 8 112 25 124)(font "Arial" ))
 	(port
@@ -52,11 +52,18 @@ applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
-		(pt 208 32)
+		(pt 216 32)
 		(output)
-		(text "product[63..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "product[63..0]" (rect 119 27 187 39)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32)(line_width 3))
+		(text "product0[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "product0[31..0]" (rect 121 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "product1[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "product1[31..0]" (rect 121 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
 	(parameter
 		"sign"
@@ -64,7 +71,7 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 192 112)(line_width 1))
+		(rectangle (rect 16 16 200 112)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 224 -64 324 16))
+	(annotation_block (parameter)(rect 232 -64 332 16))
 )

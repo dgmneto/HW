@@ -11,7 +11,8 @@ module Divisor
 		 input [31:0] divider,
 		 input clk,
 		 output reg[31:0] quotient,
-		 output reg[31:0] remainder
+		 output reg[31:0] remainder,
+		 output reg DivZero
      );
    
    parameter sign = 1;
@@ -32,6 +33,7 @@ module Divisor
 		remainder = (!negative_output) ? 
                             dividend_copy[31:0] : 
                             ~dividend_copy[31:0] + 1'b1;
+        DivZero = (divider == 32'd0) ? 1 : 0;
 	end
 
    always @( posedge clk ) 

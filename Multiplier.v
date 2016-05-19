@@ -9,8 +9,9 @@ module Multiplier(
 	input [31:0] multiplicand,
 	input clk,
 	input [1:0] select,
-	output reg [63:0] product
-	); 
+	output reg [31:0] product0,
+	output reg [31:0] product1
+	);
 
    parameter sign = 1'b1;
    
@@ -19,11 +20,17 @@ module Multiplier(
    reg [63:0] multiplicand_copy;
    reg negative_output;
    reg [5:0] bits;
+   reg [63:0] product;
    
    initial begin
         bits = 0;
         negative_output = 0;
    end
+   
+   always @ (*) begin
+		product0 = product[31:0];
+		product1 = product[63:32];
+	end
 
    always @( posedge clk )
 

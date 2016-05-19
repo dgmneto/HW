@@ -16,8 +16,8 @@ module StateMachine(
 		output reg [1:0] DivCtrl,
 		output reg [31:0] EXEVal,
 		output reg RegWrite,
-		output reg [1:0] CompOp,
-		output reg FlagCtrl,
+		output reg CompOp,
+		output reg [1:0] FlagCtrl,
 		output reg DivMulCtrl,
 		output reg [2:0] ShiftOp,
 		output reg EPCWrite,
@@ -31,8 +31,7 @@ module StateMachine(
 		output reg ALUOutCtrl,
 		output reg ABCtrl,
 		output reg HILOCtrl,
-		output reg ShiftInCtrl,
-		output reg ShiftNCtrl
+		output reg ShiftOutSrc
 	);
 	reg [31:0] state;
 	reg [4:0] delay;
@@ -101,8 +100,7 @@ module StateMachine(
 		if(delay == 5'd0) begin
 			case(state)
 				initialization: begin
-					ShiftNCtrl = 1'b0;
-					ShiftInCtrl = 1'b0;
+					ShiftOutSrc = 1'd0;
 					PCWriteCond = 0;
 					PCWrite = 0;
 					IorD = 3'd0;
@@ -325,8 +323,7 @@ module StateMachine(
 				end
 				sll1: begin
 					ABCtrl = 1'b0;
-					ShiftInCtrl = 1'b0;
-					ShiftNCtrl = 1'b1;
+					ShiftOutSrc = 1'b0;
 					ShiftOp = 3'b001;
 
 					state = sll2;
@@ -350,8 +347,7 @@ module StateMachine(
 				end
 				sra1: begin
 					ABCtrl = 1'b0;
-					ShiftInCtrl = 1'b0;
-					ShiftNCtrl = 1'b1;
+					ShiftOutSrc = 1'b0;
 					ShiftOp = 3'b001;
 
 					state = sra2;
@@ -375,8 +371,7 @@ module StateMachine(
 				end
 				srl1: begin
 					ABCtrl = 1'b0;
-					ShiftInCtrl = 1'b0;
-					ShiftNCtrl = 1'b1;
+					ShiftOutSrc = 1'b0;
 					ShiftOp = 3'b001;
 
 					state = srl2;
@@ -400,8 +395,7 @@ module StateMachine(
 				end
 				srl1: begin
 					ABCtrl = 1'b0;
-					ShiftInCtrl = 1'b0;
-					ShiftNCtrl = 1'b1;
+					ShiftOutSrc = 1'b0;
 					ShiftOp = 3'b001;
 
 					state = srl2;
@@ -425,8 +419,7 @@ module StateMachine(
 				end
 				sllv1: begin
 					ABCtrl = 1'b0;
-					ShiftInCtrl = 1'b1;
-					ShiftNCtrl = 1'b0;
+					ShiftOutSrc = 1'b0;
 					ShiftOp = 3'b001;
 
 					state = sllv2;
@@ -450,8 +443,7 @@ module StateMachine(
 				end
 				srav1: begin
 					ABCtrl = 1'b0;
-					ShiftInCtrl = 1'b1;
-					ShiftNCtrl = 1'b0;
+					ShiftOutSrc = 1'b0;
 					ShiftOp = 3'b001;
 
 					state = srav2;

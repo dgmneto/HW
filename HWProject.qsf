@@ -43,22 +43,37 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:13:27  MAY 15, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name LL_ROOT_REGION ON -entity HWProject -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity HWProject -section_id "Root Region"
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name LL_ROOT_REGION ON -entity Store_Control -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Store_Control -section_id "Root Region"
+set_global_assignment -name LL_ROOT_REGION ON -entity Mux2 -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux2 -section_id "Root Region"
+set_global_assignment -name LL_ROOT_REGION ON -entity UExtend_ShiftLeft16 -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity UExtend_ShiftLeft16 -section_id "Root Region"
+set_global_assignment -name LL_ROOT_REGION ON -entity Extend2628_ShiftLeft2 -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Extend2628_ShiftLeft2 -section_id "Root Region"
+set_global_assignment -name LL_ROOT_REGION ON -entity Mux5 -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux5 -section_id "Root Region"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Extend1632.vwf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name MIF_FILE instrucoes.mif
 set_global_assignment -name VHDL_FILE Banco_reg.vhd
 set_global_assignment -name VHDL_FILE Instr_Reg.vhd
 set_global_assignment -name VHDL_FILE Memoria.vhd
 set_global_assignment -name VHDL_FILE RegDesloc.vhd
 set_global_assignment -name VHDL_FILE Registrador.vhd
 set_global_assignment -name VHDL_FILE ula32.vhd
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name VERILOG_FILE Store_Control.v
-set_global_assignment -name LL_ROOT_REGION ON -entity HWProject -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -entity HWProject -section_id "Root Region"
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name VECTOR_WAVEFORM_FILE Store_Control.vwf
 set_global_assignment -name VERILOG_FILE Mux8.v
-set_global_assignment -name LL_ROOT_REGION ON -entity Store_Control -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Store_Control -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux8.vwf
 set_global_assignment -name VERILOG_FILE Mux4.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux4.vwf
@@ -67,13 +82,9 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Mux3.vwf
 set_global_assignment -name VERILOG_FILE Mux2.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux2.vwf
 set_global_assignment -name VERILOG_FILE Shift_Left_2.v
-set_global_assignment -name LL_ROOT_REGION ON -entity Mux2 -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux2 -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Shift_Left_2.vwf
 set_global_assignment -name VERILOG_FILE UExtend_ShiftLeft16.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE UExtend_ShiftLeft16.vwf
-set_global_assignment -name LL_ROOT_REGION ON -entity UExtend_ShiftLeft16 -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -entity UExtend_ShiftLeft16 -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Extend1632.vwf
 set_global_assignment -name VERILOG_FILE UExtend1632.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE UExtend1632.vwf
@@ -82,12 +93,8 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE UExtend832.vwf
 set_global_assignment -name VERILOG_FILE Extend2628_ShiftLeft2.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Extend2628_ShiftLeft2.vwf
 set_global_assignment -name VERILOG_FILE Mux5.v
-set_global_assignment -name LL_ROOT_REGION ON -entity Extend2628_ShiftLeft2 -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Extend2628_ShiftLeft2 -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux5.vwf
 set_global_assignment -name VERILOG_FILE Multiplier.v
-set_global_assignment -name LL_ROOT_REGION ON -entity Mux5 -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux5 -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Multiplier.vwf
 set_global_assignment -name VERILOG_FILE Divisor.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Divisor.vwf
@@ -97,10 +104,4 @@ set_global_assignment -name VERILOG_FILE Mux5_5.v
 set_global_assignment -name VERILOG_FILE Mux2_1.v
 set_global_assignment -name VERILOG_FILE Mux3_1.v
 set_global_assignment -name VERILOG_FILE Extend1632.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Extend1632.vwf
 set_global_assignment -name BDF_FILE Schematic.bdf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
