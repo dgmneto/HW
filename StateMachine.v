@@ -16,8 +16,8 @@ module StateMachine(
 		output reg [1:0] DivCtrl,
 		output reg [31:0] EXEVal,
 		output reg RegWrite,
-		output reg [1:0] CompOp,
-		output reg FlagCtrl,
+		output reg CompOp,
+		output reg [1:0] FlagCtrl,
 		output reg DivMulCtrl,
 		output reg [2:0] ShiftOp,
 		output reg EPCWrite,
@@ -29,7 +29,9 @@ module StateMachine(
 		output reg [1:0] ALUSrcA,
 		output reg [1:0] ALUSrcB,
 		output reg ABCtrl,
-		output reg HILOCtrl
+		output reg HILOCtrl,
+		output reg ALUOutCtrl,
+		output reg ShiftOutSrc
 	);
 	reg [31:0] state;
 	reg [4:0] delay;

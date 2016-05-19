@@ -65,6 +65,13 @@ applicable agreement for further details.
 		(text "remainder[31..0]" (rect 107 43 187 55)(font "Arial" ))
 		(line (pt 208 48)(pt 192 48)(line_width 3))
 	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "DivZero" (rect 0 0 40 12)(font "Arial" ))
+		(text "DivZero" (rect 147 59 187 71)(font "Arial" ))
+		(line (pt 208 64)(pt 192 64)(line_width 1))
+	)
 	(parameter
 		"sign"
 		"1"
