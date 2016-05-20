@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C70F896C7
-set_global_assignment -name TOP_LEVEL_ENTITY StateMachine
+set_global_assignment -name TOP_LEVEL_ENTITY Schematic
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:13:27  MAY 15, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -58,7 +58,6 @@ set_global_assignment -name LL_ROOT_REGION ON -entity Extend2628_ShiftLeft2 -sec
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Extend2628_ShiftLeft2 -section_id "Root Region"
 set_global_assignment -name LL_ROOT_REGION ON -entity Mux5 -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Mux5 -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Extend1632.vwf
 set_global_assignment -name MIF_FILE instrucoes.mif
 set_global_assignment -name VHDL_FILE Banco_reg.vhd
 set_global_assignment -name VHDL_FILE Instr_Reg.vhd
@@ -100,6 +99,15 @@ set_global_assignment -name VERILOG_FILE Mux2_1.v
 set_global_assignment -name VERILOG_FILE Mux3_1.v
 set_global_assignment -name VERILOG_FILE Extend1632.v
 set_global_assignment -name BDF_FILE Schematic.bdf
+set_global_assignment -name VERILOG_FILE Clock.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Clock.vwf
+set_global_assignment -name VERILOG_FILE JPCINST.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE JPCINST.vwf
+set_global_assignment -name VERILOG_FILE JINSTS.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE JINSTS.vwf
+set_global_assignment -name VERILOG_FILE BSPLITER.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE BSPLITER.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE BSPLITER.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"

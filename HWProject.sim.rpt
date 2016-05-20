@@ -1,5 +1,5 @@
 Simulator report for HWProject
-Wed May 18 21:14:20 2016
+Thu May 19 21:21:15 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -45,41 +45,41 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 48 nodes     ;
+; Simulation Netlist Size     ; 37 nodes     ;
 ; Simulation Coverage         ;     100.00 % ;
-; Total Number of Transitions ; 4518         ;
+; Total Number of Transitions ; 3752         ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                          ;
-+--------------------------------------------------------------------------------------------+----------------+---------------+
-; Option                                                                                     ; Setting        ; Default Value ;
-+--------------------------------------------------------------------------------------------+----------------+---------------+
-; Simulation mode                                                                            ; Functional     ; Timing        ;
-; Start time                                                                                 ; 0 ns           ; 0 ns          ;
-; Simulation results format                                                                  ; CVWF           ;               ;
-; Vector input source                                                                        ; Extend1632.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On             ; On            ;
-; Check outputs                                                                              ; Off            ; Off           ;
-; Report simulation coverage                                                                 ; On             ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On             ; On            ;
-; Display missing 1-value coverage report                                                    ; On             ; On            ;
-; Display missing 0-value coverage report                                                    ; On             ; On            ;
-; Detect setup and hold time violations                                                      ; Off            ; Off           ;
-; Detect glitches                                                                            ; Off            ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off            ; Off           ;
-; Generate Signal Activity File                                                              ; Off            ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off            ; Off           ;
-; Group bus channels in simulation results                                                   ; Off            ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On             ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE     ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off            ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; On             ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto           ; Auto          ;
-+--------------------------------------------------------------------------------------------+----------------+---------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                        ;
++--------------------------------------------------------------------------------------------+--------------+---------------+
+; Option                                                                                     ; Setting      ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------+---------------+
+; Simulation mode                                                                            ; Functional   ; Timing        ;
+; Start time                                                                                 ; 0 ns         ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF         ;               ;
+; Vector input source                                                                        ; BSPLITER.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On           ; On            ;
+; Check outputs                                                                              ; Off          ; Off           ;
+; Report simulation coverage                                                                 ; On           ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On           ; On            ;
+; Display missing 1-value coverage report                                                    ; On           ; On            ;
+; Display missing 0-value coverage report                                                    ; On           ; On            ;
+; Detect setup and hold time violations                                                      ; Off          ; Off           ;
+; Detect glitches                                                                            ; Off          ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off          ; Off           ;
+; Generate Signal Activity File                                                              ; Off          ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off          ; Off           ;
+; Group bus channels in simulation results                                                   ; Off          ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On           ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE   ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off          ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto         ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------+---------------+
 
 
 +----------------------+
@@ -95,9 +95,9 @@ Please use Quartus II to view the waveform report data.
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
 ; Total coverage as a percentage                      ;     100.00 % ;
-; Total nodes checked                                 ; 48           ;
-; Total output ports checked                          ; 48           ;
-; Total output ports with complete 1/0-value coverage ; 48           ;
+; Total nodes checked                                 ; 37           ;
+; Total output ports checked                          ; 10           ;
+; Total output ports with complete 1/0-value coverage ; 10           ;
 ; Total output ports with no 1/0-value coverage       ; 0            ;
 ; Total output ports with no 1-value coverage         ; 0            ;
 ; Total output ports with no 0-value coverage         ; 0            ;
@@ -105,60 +105,22 @@ Please use Quartus II to view the waveform report data.
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+--------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                  ;
-+---------------------+---------------------+------------------+
-; Node Name           ; Output Port Name    ; Output Port Type ;
-+---------------------+---------------------+------------------+
-; |Extend1632|in[0]   ; |Extend1632|in[0]   ; out              ;
-; |Extend1632|in[1]   ; |Extend1632|in[1]   ; out              ;
-; |Extend1632|in[2]   ; |Extend1632|in[2]   ; out              ;
-; |Extend1632|in[3]   ; |Extend1632|in[3]   ; out              ;
-; |Extend1632|in[4]   ; |Extend1632|in[4]   ; out              ;
-; |Extend1632|in[5]   ; |Extend1632|in[5]   ; out              ;
-; |Extend1632|in[6]   ; |Extend1632|in[6]   ; out              ;
-; |Extend1632|in[7]   ; |Extend1632|in[7]   ; out              ;
-; |Extend1632|in[8]   ; |Extend1632|in[8]   ; out              ;
-; |Extend1632|in[9]   ; |Extend1632|in[9]   ; out              ;
-; |Extend1632|in[10]  ; |Extend1632|in[10]  ; out              ;
-; |Extend1632|in[11]  ; |Extend1632|in[11]  ; out              ;
-; |Extend1632|in[12]  ; |Extend1632|in[12]  ; out              ;
-; |Extend1632|in[13]  ; |Extend1632|in[13]  ; out              ;
-; |Extend1632|in[14]  ; |Extend1632|in[14]  ; out              ;
-; |Extend1632|in[15]  ; |Extend1632|in[15]  ; out              ;
-; |Extend1632|out[0]  ; |Extend1632|out[0]  ; pin_out          ;
-; |Extend1632|out[1]  ; |Extend1632|out[1]  ; pin_out          ;
-; |Extend1632|out[2]  ; |Extend1632|out[2]  ; pin_out          ;
-; |Extend1632|out[3]  ; |Extend1632|out[3]  ; pin_out          ;
-; |Extend1632|out[4]  ; |Extend1632|out[4]  ; pin_out          ;
-; |Extend1632|out[5]  ; |Extend1632|out[5]  ; pin_out          ;
-; |Extend1632|out[6]  ; |Extend1632|out[6]  ; pin_out          ;
-; |Extend1632|out[7]  ; |Extend1632|out[7]  ; pin_out          ;
-; |Extend1632|out[8]  ; |Extend1632|out[8]  ; pin_out          ;
-; |Extend1632|out[9]  ; |Extend1632|out[9]  ; pin_out          ;
-; |Extend1632|out[10] ; |Extend1632|out[10] ; pin_out          ;
-; |Extend1632|out[11] ; |Extend1632|out[11] ; pin_out          ;
-; |Extend1632|out[12] ; |Extend1632|out[12] ; pin_out          ;
-; |Extend1632|out[13] ; |Extend1632|out[13] ; pin_out          ;
-; |Extend1632|out[14] ; |Extend1632|out[14] ; pin_out          ;
-; |Extend1632|out[15] ; |Extend1632|out[15] ; pin_out          ;
-; |Extend1632|out[16] ; |Extend1632|out[16] ; pin_out          ;
-; |Extend1632|out[17] ; |Extend1632|out[17] ; pin_out          ;
-; |Extend1632|out[18] ; |Extend1632|out[18] ; pin_out          ;
-; |Extend1632|out[19] ; |Extend1632|out[19] ; pin_out          ;
-; |Extend1632|out[20] ; |Extend1632|out[20] ; pin_out          ;
-; |Extend1632|out[21] ; |Extend1632|out[21] ; pin_out          ;
-; |Extend1632|out[22] ; |Extend1632|out[22] ; pin_out          ;
-; |Extend1632|out[23] ; |Extend1632|out[23] ; pin_out          ;
-; |Extend1632|out[24] ; |Extend1632|out[24] ; pin_out          ;
-; |Extend1632|out[25] ; |Extend1632|out[25] ; pin_out          ;
-; |Extend1632|out[26] ; |Extend1632|out[26] ; pin_out          ;
-; |Extend1632|out[27] ; |Extend1632|out[27] ; pin_out          ;
-; |Extend1632|out[28] ; |Extend1632|out[28] ; pin_out          ;
-; |Extend1632|out[29] ; |Extend1632|out[29] ; pin_out          ;
-; |Extend1632|out[30] ; |Extend1632|out[30] ; pin_out          ;
-; |Extend1632|out[31] ; |Extend1632|out[31] ; pin_out          ;
-+---------------------+---------------------+------------------+
++----------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                    ;
++----------------------+----------------------+------------------+
+; Node Name            ; Output Port Name     ; Output Port Type ;
++----------------------+----------------------+------------------+
+; |BSPLITER|b[0]       ; |BSPLITER|b[0]       ; out              ;
+; |BSPLITER|b[1]       ; |BSPLITER|b[1]       ; out              ;
+; |BSPLITER|b[2]       ; |BSPLITER|b[2]       ; out              ;
+; |BSPLITER|b[3]       ; |BSPLITER|b[3]       ; out              ;
+; |BSPLITER|b[4]       ; |BSPLITER|b[4]       ; out              ;
+; |BSPLITER|splited[0] ; |BSPLITER|splited[0] ; pin_out          ;
+; |BSPLITER|splited[1] ; |BSPLITER|splited[1] ; pin_out          ;
+; |BSPLITER|splited[2] ; |BSPLITER|splited[2] ; pin_out          ;
+; |BSPLITER|splited[3] ; |BSPLITER|splited[3] ; pin_out          ;
+; |BSPLITER|splited[4] ; |BSPLITER|splited[4] ; pin_out          ;
++----------------------+----------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
@@ -190,22 +152,21 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 18 21:14:19 2016
+    Info: Processing started: Thu May 19 21:21:15 2016
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off HWProject -c HWProject
-Info: Using vector source file "C:/Users/dgmneto/Documents/Projetos/HW/Extend1632.vwf"
+Info: Using vector source file "C:/Users/dgmneto/Documents/Projetos/HW/BSPLITER.vwf"
 Info: Overwriting simulation input file with simulation results
-    Info: A backup of Extend1632.vwf called HWProject.sim_ori.vwf has been created in the db folder
-Warning: Ignored node in vector source file. Can't find corresponding node name "out[32]" in design.
+    Info: A backup of BSPLITER.vwf called HWProject.sim_ori.vwf has been created in the db folder
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
 Info: Simulation coverage is     100.00 %
-Info: Number of transitions in simulation is 4518
-Info: Vector file Extend1632.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II Simulator was successful. 0 errors, 1 warning
+Info: Number of transitions in simulation is 3752
+Info: Vector file BSPLITER.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 158 megabytes
-    Info: Processing ended: Wed May 18 21:14:20 2016
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu May 19 21:21:15 2016
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

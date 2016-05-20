@@ -1,5 +1,5 @@
 Assembler report for HWProject
-Wed May 18 21:14:11 2016
+Thu May 19 21:51:22 2016
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed May 18 21:14:11 2016 ;
+; Assembler Status      ; Successful - Thu May 19 21:51:22 2016 ;
 ; Revision Name         ; HWProject                             ;
-; Top-level Entity Name ; Extend1632                            ;
+; Top-level Entity Name ; Schematic                             ;
 ; Family                ; Cyclone II                            ;
 ; Device                ; EP2C70F896C7                          ;
 +-----------------------+---------------------------------------+
@@ -95,7 +95,7 @@ applicable agreement for further details.
 +----------------+---------------------------------------------------------------+
 ; Device         ; EP2C70F896C7                                                  ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                    ;
-; Checksum       ; 0x00607ACF                                                    ;
+; Checksum       ; 0x00605D53                                                    ;
 +----------------+---------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+-----------------------------------------------------------+
 ; Device             ; EPCS16                                                    ;
 ; JTAG usercode      ; 0x00000000                                                ;
-; Checksum           ; 0x187F2D19                                                ;
+; Checksum           ; 0x18800726                                                ;
 ; Compression Ratio  ; 3                                                         ;
 +--------------------+-----------------------------------------------------------+
 
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 18 21:14:07 2016
+    Info: Processing started: Thu May 19 21:51:18 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off HWProject -c HWProject
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 346 megabytes
-    Info: Processing ended: Wed May 18 21:14:11 2016
+    Info: Peak virtual memory: 347 megabytes
+    Info: Processing ended: Thu May 19 21:51:22 2016
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
