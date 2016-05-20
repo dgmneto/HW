@@ -38,7 +38,6 @@ module StateMachine(
 	reg [4:0] delay;
 
 	parameter OFOP0 = 32'd500;
-<<<<<<< HEAD
 	parameter OFOP1 = 32'd501;
 	parameter OFOP2 = 32'd502;
 	parameter DIVZERO0 = 32'd600;
@@ -47,9 +46,6 @@ module StateMachine(
 	parameter OPCINEX0 = 32'd700;
 	parameter OPCINEX1 = 32'd701;
 	parameter OPCINEX2 = 32'd702;
-=======
-	parameter DZOP0 = 32'd400;
->>>>>>> origin/StateMachine
 	parameter initialization = 32'd0;
 	parameter instread = 32'd1;
 	parameter pcp4 = 32'd2;
@@ -102,7 +98,6 @@ module StateMachine(
 	parameter pop3 = 32'd49;
 	parameter pop4 = 32'd50;
 	parameter pop5 = 32'd51;
-<<<<<<< HEAD
 	parameter div0 = 32'd52;
 	parameter div1 = 32'd53;
 	parameter div2 = 32'd54;
@@ -164,14 +159,6 @@ module StateMachine(
 	parameter slti0 = 32'd110;
 	parameter slti1 = 32'd111;
 	parameter lui0 = 32'd112;
-=======
-	parameter mul0 = 32'd52;
-	parameter mul1 = 32'd53;
-	parameter mul2 = 32'd54;
-	parameter div0 = 32'd55;
-	parameter div1 = 32'd56;
-	parameter div2 = 32'd57;
->>>>>>> origin/StateMachine
 
 	initial begin
 		delay = 5'd0;
@@ -247,7 +234,6 @@ module StateMachine(
 				decodification1: begin
 				//Precisa checar opcode inexistente aqui e pular para state = OPCINEX0;
 					IRWrite = 1'b0;
-<<<<<<< HEAD
 					if(opCode == 6'b000000) begin
 						case(instruction)
 							6'h10: begin
@@ -357,68 +343,6 @@ module StateMachine(
 							end
 						endcase
 					end
-
-=======
-				 	case (opCode)
-						// instrucoes tipo R
-						6'b0: begin
-							case(instruction)
-								6'h10: begin
-									state = mfhi0;
-								end
-								6'h12: begin
-									state = mflo0;
-								end
-								6'h20: begin
-									state = add0;
-								end
-								6'h24: begin
-									state = and0;
-								end
-								6'h22: begin
-									state = sub0;
-								end
-								6'h0: begin
-									state = sll0;
-								end
-								6'h4: begin
-									state = sllv0;
-								end
-								6'h3: begin
-									state = sra0;
-								end
-								6'h7: begin
-									state = srav0;
-								end
-								6'h2: begin
-									state = srl0;
-								end
-								6'hd: begin
-									state = break0;
-								end
-								6'h13: begin
-									state = rte0;
-								end
-								6'h2a: begin
-									state = slt0;
-								end
-								6'h1a: begin
-									state = div0;
-								end
-								6'h18: begin
-									state = mul0;
-								end
-								6'h5: begin
-									state = push0;
-								end
-								6'h6: begin
-									state = pop0;
-								end
-							endcase
-
-						end
-					endcase
->>>>>>> origin/StateMachine
 				end
 				mfhi0: begin
 					RegDst = 3'b001;
@@ -738,7 +662,6 @@ module StateMachine(
 					state = instread;
 				end
 				div0: begin
-<<<<<<< HEAD
 					RR1 = 1'b0;
 					ABCtrl = 1'b1;
 
@@ -1080,47 +1003,6 @@ module StateMachine(
 				sh0: begin
 					RR1 = 1'b0;
 					ABCtrl = 1'b1;
-=======
-				  DivCtrl = 2'b01;
-
-				  state = div1;
-				end
-				div1: begin
-				  if(DivZeroOP == 1'b0) begin
-				    DivCtrl = 2'b10;
-				    delay = 5'd31;
-
-				    state = div2;
-				  end else begin
-				    state = DZOP0; //div zero op
-				  end
-				end
-				div2: begin
-				  DivCtrl = 2'b11;
-				  DivMulCtrl = 0;
-				  HILOCtrl = 1'b1;
-
-				  state = instread;
-				end
-				mul0: begin
-				  MulCtrl = 2'b01;
-
-				  state = mul1;
-				end
-				mul1: begin
-				  MulCtrl = 2'b10;
-				  delay = 5'd31;
-
-				  state = mul2;
-				end
-				mul2: begin
-				  MulCtrl = 2'b11;
-				  DivMulCtrl = 1'b1;
-				  HILOCtrl = 1'b1;
-
-				  state = instread;
-				end
->>>>>>> origin/StateMachine
 
 					state = sh1;
 				end
