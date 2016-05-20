@@ -38,7 +38,7 @@ module Divisor
 
    always @( posedge clk ) 
 
-     if( select == 2'b00 ) begin
+     if( select == 2'b01 ) begin
 
         bits = 6'd32;
         quotient = 0;
@@ -55,7 +55,7 @@ module Divisor
                         ||(!divider[31] && dividend[31]));
         
      end 
-     else if ( bits > 0 && select == 2'b01 ) begin
+     else if ( bits > 0 && select == 2'b10 ) begin
 
         diff = dividend_copy - divider_copy;
 

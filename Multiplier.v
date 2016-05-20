@@ -34,7 +34,7 @@ module Multiplier(
 
    always @( posedge clk )
 
-     if( select == 2'b00 ) begin
+     if( select == 2'b01 ) begin
 
         bits               = 6'd32;
         product           = 0;
@@ -51,7 +51,7 @@ module Multiplier(
                         ||(!multiplier[31] && multiplicand[31]));
         
      end 
-     else if ( bits > 0 && select == 2'b01 ) begin
+     else if ( bits > 0 && select == 2'b10 ) begin
 
         if( multiplier_copy[0] == 1'b1 ) product_temp = product_temp +
 multiplicand_copy;
