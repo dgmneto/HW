@@ -37,6 +37,7 @@ module StateMachine(
 	reg [4:0] delay;
 
 	parameter OFOP0 = 32'd500;
+	parameter DZOP0 = 32'd400;
 	parameter initialization = 32'd0;
 	parameter instread = 32'd1;
 	parameter pcp4 = 32'd2;
@@ -89,8 +90,12 @@ module StateMachine(
 	parameter pop3 = 32'd49;
 	parameter pop4 = 32'd50;
 	parameter pop5 = 32'd51;
-	parameter mult0 = 32'd52;
-	parameter div0 = 32'd53;
+	parameter mul0 = 32'd52;
+	parameter mul1 = 32'd53;
+	parameter mul2 = 32'd54;
+	parameter div0 = 32'd55;
+	parameter div1 = 32'd56;
+	parameter div2 = 32'd57;
 
 	initial begin
 		delay = 5'd0;
@@ -202,7 +207,7 @@ module StateMachine(
 									state = div0;
 								end
 								6'h18: begin
-									state = mult0;
+									state = mul0;
 								end
 								6'h5: begin
 									state = push0;
@@ -531,6 +536,46 @@ module StateMachine(
 					MemToReg = 3'b001;
 
 					state = instread;
+				end
+				div0: begin
+				  DivCtrl = 2'b01;
+
+				  state = div1;
+				end
+				div1: begin
+				  if(DivZeroOP == 1'b0) begin
+				    DivCtrl = 2'b10;
+				    delay = 5'd31;
+
+				    state = div2;
+				  end else begin
+				    state = DZOP0; //div zero op
+				  end
+				end
+				div2: begin
+				  DivCtrl = 2'b11;
+				  DivMulCtrl = 0;
+				  HILOCtrl = 1'b1;
+
+				  state = instread;
+				end
+				mul0: begin
+				  MulCtrl = 2'b01;
+
+				  state = mul1;
+				end
+				mul1: begin
+				  MulCtrl = 2'b10;
+				  delay = 5'd31;
+
+				  state = mul2;
+				end
+				mul2: begin
+				  MulCtrl = 2'b11;
+				  DivMulCtrl = 1'b1;
+				  HILOCtrl = 1'b1;
+
+				  state = instread;
 				end
 
 			endcase
