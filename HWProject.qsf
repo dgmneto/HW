@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C70F896C7
-set_global_assignment -name TOP_LEVEL_ENTITY Mux3_1
+set_global_assignment -name TOP_LEVEL_ENTITY RegConst
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:13:27  MAY 15, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -96,7 +96,6 @@ set_global_assignment -name VERILOG_FILE JINSTS.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE JINSTS.vwf
 set_global_assignment -name VERILOG_FILE BSPLITER.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE BSPLITER.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Schematic.vwf
 set_global_assignment -name VERILOG_FILE ULAConst.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE ULAConst.vwf
 set_global_assignment -name VERILOG_FILE PCConst.v
@@ -105,7 +104,6 @@ set_global_assignment -name VERILOG_FILE InstSpliter.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE InstSpliter.vwf
 set_global_assignment -name VERILOG_FILE CompOutExtended.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE CompOutExtended.vwf
-set_global_assignment -name BDF_FILE Schematic.bdf
 set_global_assignment -name VERILOG_FILE Mux2_1.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux2_1.vwf
 set_global_assignment -name VERILOG_FILE Mux2_5.v
@@ -118,9 +116,13 @@ set_global_assignment -name VERILOG_FILE Mux5_5.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux5_5.vwf
 set_global_assignment -name VERILOG_FILE Mux3_1.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Mux3_1.vwf
+set_global_assignment -name BDF_FILE Schematic.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Schematic.vwf
+set_global_assignment -name VERILOG_FILE RegConst.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE Mux3_1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE RegConst.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE RegConst.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

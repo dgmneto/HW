@@ -1,11 +1,18 @@
-|Mux3_1
-in0 => Mux0.IN1
-in1 => Mux0.IN2
-in2 => Mux0.IN3
-select[0] => Mux0.IN5
-select[0] => Mux1.IN5
-select[1] => Mux0.IN4
-select[1] => Mux1.IN4
-selected <= selected$latch.DB_MAX_OUTPUT_PORT_TYPE
+|RegConst
+Const29[0] <= <VCC>
+Const29[1] <= <GND>
+Const29[2] <= <VCC>
+Const29[3] <= <VCC>
+Const29[4] <= <VCC>
+Const30[0] <= <GND>
+Const30[1] <= <VCC>
+Const30[2] <= <VCC>
+Const30[3] <= <VCC>
+Const30[4] <= <VCC>
+Const31[0] <= <VCC>
+Const31[1] <= <VCC>
+Const31[2] <= <VCC>
+Const31[3] <= <VCC>
+Const31[4] <= <VCC>
 
 

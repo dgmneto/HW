@@ -552,9 +552,6 @@ VERILOG_CONSTANT_LOOP_LIMIT
 VERILOG_NON_CONSTANT_LOOP_LIMIT
 250
 }
-# hierarchies {
-|
-}
 # macro_sequence
 
 # end
@@ -1635,106 +1632,6 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
-altsyncram_e1a1
-# storage
-db|HWProject.(35).cnf
-db|HWProject.(35).cnf
-# case_insensitive
-# source_file
-db|altsyncram_e1a1.tdf
-5f46b4426971a8cb9acc96938ade06f
-7
-# used_port {
-wren_a
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-data_a7
--1
-3
-data_a6
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-instrucoes.mif
-2e5b336fed499698d9b0631ec2a172
-}
-# macro_sequence
-
-# end
-# entity
 InstSpliter
 # storage
 db|HWProject.(36).cnf
@@ -1812,7 +1709,7 @@ ON
 # case_sensitive
 # source_file
 statemachine.v
-60495f65c64b834696a4b622a3efe
+8e6e46bfb69a3fb3b3c3f931837c1c
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -2324,18 +2221,37 @@ USR
 
 # end
 # entity
-Schematic
+RegConst
 # storage
-db|HWProject.(37).cnf
-db|HWProject.(37).cnf
-# case_insensitive
+db|HWProject.(35).cnf
+db|HWProject.(35).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
 # source_file
-schematic.bdf
-b9d2a8d309f8587c4f7e2c673c89ffd
-26
+regconst.v
+24ea71762d7aa78c1eea75c45c44159
+8
 # internal_option {
-BLOCK_DESIGN_NAMING
-AUTO
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 

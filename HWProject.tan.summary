@@ -2,35 +2,35 @@
 Timing Analyzer Summary
 --------------------------------------------------------------------------------------
 
-Type           : Worst-case tsu
-Slack          : N/A
-Required Time  : None
-Actual Time    : 5.939 ns
-From           : select[0]
-To             : selected$latch
-From Clock     : --
-To Clock       : select[0]
-Failed Paths   : 0
-
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 5.965 ns
-From           : selected$latch
-To             : selected
-From Clock     : select[1]
+Actual Time    : 16.711 ns
+From           : Mux3:SrcA|selected[21]
+To             : SRCAOUTPUT[21]
+From Clock     : Clock
 To Clock       : --
 Failed Paths   : 0
 
-Type           : Worst-case th
+Type           : Clock Setup: 'Clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : -2.436 ns
-From           : in0
-To             : selected$latch
-From Clock     : --
-To Clock       : select[1]
+Actual Time    : 19.11 MHz ( period = 52.334 ns )
+From           : Mux3:SrcA|selected[0]
+To             : Registrador:EPC|Saida[31]
+From Clock     : Clock
+To Clock       : Clock
 Failed Paths   : 0
+
+Type           : Clock Hold: 'Clock'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : Registrador:RegB|Saida[2]
+To             : Store_Control:inst4|toMemory[2]
+From Clock     : Clock
+To Clock       : Clock
+Failed Paths   : 368
 
 Type           : Total number of failed paths
 Slack          : 
@@ -40,7 +40,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 0
+Failed Paths   : 368
 
 --------------------------------------------------------------------------------------
 

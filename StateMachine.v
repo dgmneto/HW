@@ -393,14 +393,17 @@ module StateMachine(
 				sub0: begin
 					RR1 = 1'b0;
 					ABCtrl = 1'b1;
+					ALUSrcA = 2'b10;
+					ALUSrcB = 2'b00;
 
-					state = add1;
+					state = sub1;
 				end
 				sub1: begin
+					
 					ALUOp = 3'b010;
 					ALUOutCtrl = 1'b1;
 
-					state = add2;
+					state = sub2;
 				end
 				sub2: begin
 					ALUOutCtrl = 1'b0;
@@ -417,14 +420,16 @@ module StateMachine(
 				and0: begin
 					RR1 = 1'b0;
 					ABCtrl = 1'b1;
+					ALUSrcA = 2'b10;
+					ALUSrcB = 2'b00;
 
-					state = add1;
+					state = and1;
 				end
 				and1: begin
 					ALUOp = 3'b011;
 					ALUOutCtrl = 1'b1;
 
-					state = add2;
+					state = and2;
 				end
 				and2: begin
 					ALUOutCtrl = 1'b0;
