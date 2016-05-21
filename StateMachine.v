@@ -31,7 +31,8 @@ module StateMachine(
 		output reg ABCtrl,
 		output reg HILOCtrl,
 		output reg ALUOutCtrl,
-		output reg ShiftOutSrc
+		output reg ShiftOutSrc,
+		output reg Reset
 	);
 
 	reg [31:0] state;
@@ -196,13 +197,15 @@ module StateMachine(
 					ABCtrl  = 1'b0;
 					HILOCtrl = 1'b0;
 					ALUOutCtrl = 1'b0;
+					Reset = 1'b1;
 
 					state = instread;
 				end
 				instread: begin
+					Reset = 1'b0;
 					PCWriteCond = 1'b0;
 					PCWrite = 1'b0;
-					ALUSrcB = 2'b01;
+					ALUSrcB = 2'b00;
 					wrMemo = 1'b0;
 					RegWrite = 1'b0;
 					DivMulCtrl = 2'b00;
@@ -215,10 +218,13 @@ module StateMachine(
 					MulCtrl = 2'b00;
 					DivCtrl = 2'b00;
 					HILOCtrl = 1'b0;
+					IorD = 3'd0;
 
 					state = pcp4;
 				end
 				pcp4: begin
+					ALUSrcA = 2'b00;
+					ALUSrcB = 2'b01;
 					ALUOp = 3'b001;
 					PCWrite = 1'b1;
 					PCSource = 2'b00;
@@ -361,6 +367,8 @@ module StateMachine(
 				add0: begin
 					RR1 = 1'b0;
 					ABCtrl = 1'b1;
+					ALUSrcA = 2'b10;
+					ALUSrcB = 2'b00;
 
 					state = add1;
 				end

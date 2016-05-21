@@ -254,9 +254,56 @@ applicable agreement for further details.
 		(text "ShiftOutSrc" (rect 130 459 187 471)(font "Arial" ))
 		(line (pt 208 464)(pt 192 464)(line_width 1))
 	)
+	(port
+		(pt 208 480)
+		(output)
+		(text "Reset" (rect 0 0 29 12)(font "Arial" ))
+		(text "Reset" (rect 158 475 187 487)(font "Arial" ))
+		(line (pt 208 480)(pt 192 480)(line_width 1))
+	)
 	(parameter
 		"OFOP0"
 		"00000000000000000000000111110100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"OFOP1"
+		"00000000000000000000000111110101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"OFOP2"
+		"00000000000000000000000111110110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DIVZERO0"
+		"00000000000000000000001001011000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DIVZERO1"
+		"00000000000000000000001001011001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"DIVZERO2"
+		"00000000000000000000001001011010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"OPCINEX0"
+		"00000000000000000000001010111100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"OPCINEX1"
+		"00000000000000000000001010111101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"OPCINEX2"
+		"00000000000000000000001010111110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
@@ -300,7 +347,7 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"rte0"
+		"j0"
 		"00000000000000000000000000001000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
@@ -520,13 +567,308 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"mult0"
+		"div0"
 		"00000000000000000000000000110100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
-		"div0"
+		"div1"
 		"00000000000000000000000000110101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"div2"
+		"00000000000000000000000000110110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"div3"
+		"00000000000000000000000000110111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"mult0"
+		"00000000000000000000000000111000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"mult1"
+		"00000000000000000000000000111001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"mult2"
+		"00000000000000000000000000111010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"mult3"
+		"00000000000000000000000000111011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"addi0"
+		"00000000000000000000000000111100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"addi1"
+		"00000000000000000000000000111101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"addi2"
+		"00000000000000000000000000111110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"addiu0"
+		"00000000000000000000000000111111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"addiu1"
+		"00000000000000000000000001000000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"addiu2"
+		"00000000000000000000000001000001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"beq0"
+		"00000000000000000000000001000010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"beq1"
+		"00000000000000000000000001000011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"beq2"
+		"00000000000000000000000001000100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"bne0"
+		"00000000000000000000000001000101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"bne1"
+		"00000000000000000000000001000110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"bne2"
+		"00000000000000000000000001000111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"ble0"
+		"00000000000000000000000001001000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"ble1"
+		"00000000000000000000000001001001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"ble2"
+		"00000000000000000000000001001010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"bgt0"
+		"00000000000000000000000001001011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"bgt1"
+		"00000000000000000000000001001100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"bgt2"
+		"00000000000000000000000001001101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lb0"
+		"00000000000000000000000001001110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lb1"
+		"00000000000000000000000001001111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lb2"
+		"00000000000000000000000001010000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lb3"
+		"00000000000000000000000001010001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lb4"
+		"00000000000000000000000001010010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lh0"
+		"00000000000000000000000001010011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lh1"
+		"00000000000000000000000001010100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lh2"
+		"00000000000000000000000001010101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lh3"
+		"00000000000000000000000001010110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lh4"
+		"00000000000000000000000001010111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lw0"
+		"00000000000000000000000001011000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lw1"
+		"00000000000000000000000001011001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lw2"
+		"00000000000000000000000001011010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lw3"
+		"00000000000000000000000001011011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lw4"
+		"00000000000000000000000001011100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sb0"
+		"00000000000000000000000001011101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sb1"
+		"00000000000000000000000001011110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sb2"
+		"00000000000000000000000001011111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sb3"
+		"00000000000000000000000001100000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sb4"
+		"00000000000000000000000001100001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sh0"
+		"00000000000000000000000001100010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sh1"
+		"00000000000000000000000001100011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sh2"
+		"00000000000000000000000001100100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sh3"
+		"00000000000000000000000001100101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sh4"
+		"00000000000000000000000001100110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sw0"
+		"00000000000000000000000001100111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sw1"
+		"00000000000000000000000001101000"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"sw2"
+		"00000000000000000000000001101001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"jal0"
+		"00000000000000000000000001101010"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"jal1"
+		"00000000000000000000000001101011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"jal2"
+		"00000000000000000000000001101100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"rte0"
+		"00000000000000000000000001101101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"slti0"
+		"00000000000000000000000001101110"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"slti1"
+		"00000000000000000000000001101111"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"lui0"
+		"00000000000000000000000001110000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing

@@ -561,7 +561,7 @@ GND*                         : G11       :        :                   :         
 GND*                         : G12       :        :                   :         : 3         :                
 GND*                         : G13       :        :                   :         : 3         :                
 GND*                         : G14       :        :                   :         : 3         :                
-Clock                        : G15       : input  : 3.3-V LVTTL       :         : 3         : N              
+in2                          : G15       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : G16       :        :                   :         : 4         :                
 GND*                         : G17       :        :                   :         : 4         :                
 GND*                         : G18       :        :                   :         : 4         :                
@@ -570,8 +570,8 @@ GND*                         : G20       :        :                   :         
 GND*                         : G21       :        :                   :         : 4         :                
 GND*                         : G22       :        :                   :         : 4         :                
 GNDA_PLL2                    : G23       : gnd    :                   :         :           :                
-GND*                         : G24       :        :                   :         : 5         :                
-GND*                         : G25       :        :                   :         : 5         :                
+select[0]                    : G24       : input  : 3.3-V LVTTL       :         : 5         : N              
+in1                          : G25       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : G26       :        :                   :         : 5         :                
 GND*                         : G27       :        :                   :         : 5         :                
 GND*                         : G28       :        :                   :         : 5         :                
@@ -591,7 +591,7 @@ GND*                         : H11       :        :                   :         
 GND*                         : H12       :        :                   :         : 3         :                
 GND*                         : H13       :        :                   :         : 3         :                
 GND*                         : H14       :        :                   :         : 3         :                
-GND+                         : H15       :        :                   :         : 3         :                
+in0                          : H15       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : H16       :        :                   :         : 4         :                
 GND*                         : H17       :        :                   :         : 4         :                
 GND*                         : H18       :        :                   :         : 4         :                
@@ -599,9 +599,9 @@ GND*                         : H19       :        :                   :         
 GND*                         : H20       :        :                   :         : 4         :                
 GND*                         : H21       :        :                   :         : 4         :                
 VCCA_PLL2                    : H22       : power  :                   : 1.2V    :           :                
-GND*                         : H23       :        :                   :         : 5         :                
+selected                     : H23       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : H24       :        :                   :         : 5         :                
-GND*                         : H25       :        :                   :         : 5         :                
+select[1]                    : H25       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : H26       :        :                   :         : 5         :                
 GND*                         : H27       :        :                   :         : 5         :                
 GND*                         : H28       :        :                   :         : 5         :                
